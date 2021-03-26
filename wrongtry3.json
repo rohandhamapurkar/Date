@@ -1,0 +1,13 @@
+[
+    {
+        "_id": {
+            "$oid": "6027c705dc7d35bd201bf2b4"
+        },
+        "uuid": "0bcc55b5-d774-4c4b-97f7-b738c44ea16b",
+        "stockistId": "0000019351",
+        "fileString": "SHREE RAM PHARMA..\n OPP.DURGA MANDIR, \n NEW MANDI ROAD,,DAUS A\n Tel.:9414335212,861916 7008\n \n (From 01/01/2021 To 30/01 /2021)\n \n Saleable Stock Report  Page No. :      1\n ——————————————————————————————————————————————————— —————————————————————————————————",
+        "metaUsed": {
+            "$oid": "5ed958865983bd64f3946e49"
+        }
+    }
+]

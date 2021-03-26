@@ -1,0 +1,11 @@
+[{
+	"_id": {
+		"$oid": "6027c6fbdc7d35bd201be8ee"
+	},
+	"uuid": "705edbfd-c7d8-4cf6-b01f-db0a87cd9cff",
+	"stockistId": "0000017164",
+	"fileString": "JANTA MEDICAL STORES\n39,VIJAYNAGAR SHOPPING CENTRE,,KALPATARU, HOSPITAL\nROAD, BHUJ Ph:223169/9429896569\n01-Jan-21 to 31-Jan -21",
+	"metaUsed": {
+		"$oid": "600f121ac3815a156a2c216f"
+}
+}]
