@@ -202,7 +202,7 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match4)>0:
         print(len(match4))
         return True
-input_file=open('fileHeaderStringsv2.json',encoding='utf8')
+input_file=open('wrongtry3.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
@@ -215,14 +215,13 @@ try:
         jsonstr1="\n".join(x for x in jsonstr1)
         if dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid):
             print("date found", jsonuuid)
+        elif dateExt(jsonstr,jsonuuid,jsonmeta,jsonstkid):
+            print("date found in 1st line",jsonuuid)
         else:
-            if dateExt(jsonstr,jsonuuid,jsonmeta,jsonstkid):
-                print("date found in 1st line",jsonuuid)
-            else:
-                remark="no date found"
-                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                with open("dateJsonOutput.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
+            remark="no date found"
+            json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
+            with open("dateJsonOutput.json", "a+") as outfile: 
+                json.dump(json_data, outfile, indent=4)
+                outfile.write(',\n')
 except UnicodeEncodeError:
     pass
