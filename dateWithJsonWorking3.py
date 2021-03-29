@@ -202,7 +202,7 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match4)>0:
         print(len(match4))
         return True
-input_file=open('wrongtry3.json',encoding='utf8')
+input_file=open('wrongtry.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
