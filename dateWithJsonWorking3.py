@@ -3,7 +3,7 @@ import re
 from datetime import date, datetime
 import os
 import sys
-
+#dl1:
 def dateExt(text, fileuuid, meta, stkid):
     def dateComp(date1,date2,remark,text,stkid,fileuuid):
         if date1>date2:
@@ -35,7 +35,6 @@ def dateExt(text, fileuuid, meta, stkid):
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
-
     pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
     if len(match)==2:
@@ -218,8 +217,7 @@ try:
             print("date found", jsonuuid)
         else:
             if dateExt(jsonstr,jsonuuid,jsonmeta,jsonstkid):
-
-                print("date not found",jsonuuid)
+                print("date found in 1st line",jsonuuid)
             else:
                 remark="no date found"
                 json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
