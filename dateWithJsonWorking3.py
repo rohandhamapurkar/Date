@@ -5,10 +5,6 @@ import os
 import sys
 
 def dateExt(text, fileuuid, meta, stkid):
-
-    # elif match4==0:
-    #     prefinalText=''
-    #     text3=text
     def dateComp(date1,date2,remark,text,stkid,fileuuid):
         if date1>date2:
             start_date=date2
@@ -72,9 +68,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matching with 2dates and dd/mm/yyyy and dd/mm pattern"
                     dateComp(date1,date2,remark,text,stkid,fileuuid)
                 except ValueError:
-                   pass
-            
-            
+                   pass            
         else:
             for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
                 try:
@@ -88,6 +82,7 @@ def dateExt(text, fileuuid, meta, stkid):
                    pass
 
     if len(match)>0:
+        print(len(match))
         return True
         
 
@@ -138,6 +133,7 @@ def dateExt(text, fileuuid, meta, stkid):
                pass
 
     if len(match2)>0:
+        len(match2)
         return True
 
     #matching with 3rd pattern
@@ -152,13 +148,12 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
-                print(date1)
-                print(date2)
                 remark="matching with 2dates and yyyy/mm/dd pattern"
                 dateComp(date1,date2,remark,text,stkid,fileuuid)
             except ValueError:
                 pass
     if len(match3)>0:
+        len(match3)
         return True
         
     #matching with 4th pattern
@@ -206,8 +201,9 @@ def dateExt(text, fileuuid, meta, stkid):
             except ValueError:
                pass
     if len(match4)>0:
-            return True
-input_file=open('wrongtry.json',encoding='utf8')
+        print(len(match4))
+        return True
+input_file=open('fileHeaderStringsv2.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:

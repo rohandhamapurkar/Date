@@ -294,7 +294,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     outfile.write(',\n')
             except ValueError:
                pass
-input_file=open('wrongtry.json',encoding='utf8')
+input_file=open('fileHeaderStringsv2.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
