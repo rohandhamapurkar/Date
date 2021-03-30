@@ -3,7 +3,6 @@ import re
 from datetime import date, datetime
 import os
 import sys
-
 def dateExt(text, fileuuid, meta, stkid):
     text=text.lower()
     finalText=''
