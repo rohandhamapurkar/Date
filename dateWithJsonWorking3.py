@@ -213,7 +213,6 @@ try:
         #dateExt(jsonstr,jsonuuid,jsonmeta,jsonstkid)
         jsonstr1=jsonstr.splitlines()[1:]
         jsonstr1="\n".join(x for x in jsonstr1)
-
         jsonstr2=jsonstr.splitlines()[:1]
         jsonstr2="\n".join(x for x in jsonstr2)        
         if dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid):
