@@ -3,6 +3,8 @@ import re
 from datetime import date, datetime
 import os
 import sys
+
+
 def dateExt(text, fileuuid, meta, stkid):
     def dateComp(date1,date2,remark,text,stkid,fileuuid):
         if date1>date2:
@@ -34,6 +36,7 @@ def dateExt(text, fileuuid, meta, stkid):
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
+    print("match 1")
     pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
     if len(match)==2:
@@ -82,10 +85,36 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match)>0:
         print(len(match))
         return True
-        
+    
+
+    #jan 01, 2021 to :- jan 31, 2021
+    pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
+    match5 = re.findall(pattern5,finalText)
+    print(len(match5))
+    if len(match5) == 2:
+        print("match5")
+        tup1=match5[0]   #1st tuple from match list
+        tup2=match5[1]   #2nd tuple from match list
+        tup1='/'.join(tup1) #converting to string by "/"
+        tup2='/'.join(tup2)
+        print(tup1)
+        print(tup2)
+        for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
+            try:
+                date1 = datetime.strptime(tup1, frmt)
+                date2 = datetime.strptime(tup2, frmt)
+                remark="matching with 2dates and mm/dd/yyyy pattern"
+                dateComp(date1,date2,remark,text,stkid,fileuuid)
+            except ValueError:
+                pass
+    if len(match5)>0:
+        print(len(match5))
+        return True
+
 
     #matching with 2nd pattern
     #(?<!\S)
+    print("match 2")
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
     if len(match2)==2:
@@ -131,10 +160,11 @@ def dateExt(text, fileuuid, meta, stkid):
                pass
 
     if len(match2)>0:
-        len(match2)
+        print(len(match2))
         return True
 
     #matching with 3rd pattern
+    print("match 3")
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
     if len(match3)==2:
@@ -155,6 +185,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return True
 
     #matching with 4th pattern
+    print("pattern 4")
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
     if len(match4)==2:
@@ -201,8 +232,7 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match4)>0:
         return True
     
-    #31 January 2021
-    #pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b'
+
 input_file=open('wrongtry3.json',encoding='utf8')
 json_array = json.load(input_file)
 try:

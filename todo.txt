@@ -1,0 +1,38 @@
+'''
+Scenario 1: correct date might be in array of patt5 tup=date
+[
+    [
+        tup1, matched with patt1
+    ],
+    [
+        tup1, matched with patt3
+    ],
+    [
+        tup1, matched with patt5
+        tup2, matched with patt5
+    ]
+]
+
+Scenario 2: correct date might be in array of patt1, since no pattern could match 2 dates we'll default to pattern priority
+[
+    [
+        tup1, matched with patt1
+    ],
+    [
+        tup1, matched with patt3
+    ],
+    [
+        tup1, matched with patt5
+    ]
+]
+
+Scenario 3: since we got 2 tups in given patt, we'll return the func.
+[
+    [
+        tup1, matched with patt1
+        tup2, matched with patt1
+    ]
+]
+
+Scenario 4: if tuples match but format does not match, in that case do push to array.
+'''

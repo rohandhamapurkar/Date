@@ -1,9 +1,9 @@
 {
-    "fileStr": " mr: nagendra c company: alkem pentacare division download: 01 february 2021\n stockiest: vpi medisales report from: 01 january 2021 to 31 january 2021",
-    "uuid": "786b9f5b-3759-48b7-95d1-47e7607c1db0",
-    "metaUsed": "5f76df16662020f844d567ce",
+    "fileStr": " stock and sales report\n 02 feb, 2021 21:57:20\n supplier:- kcco from:- jan 01, 2021 to :- jan 31, 2021\n mfg name: alkem bergen asta",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
     "start_date": "2021-01-01 00:00:00",
     "end_date  ": "2021-01-31 00:00:00",
-    "stockistId": "0000016227",
-    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
 },
