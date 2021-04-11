@@ -4,7 +4,6 @@ from datetime import date, datetime
 import os
 import sys
 
-
 def dateExt(text, fileuuid, meta, stkid):
     def dateComp(date1,date2,remark,text,stkid,fileuuid):
         if date1>date2:
