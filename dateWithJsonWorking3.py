@@ -30,7 +30,7 @@ def dateExt(text, fileuuid, meta, stkid):
     text=text.lower()
     prefinalText=''
     for line in text.splitlines():
-        if not "generated" in line and not "report date" in line and not "date/time" in line and not "run date" in line and not "print date" in line and not "valid upto" in line and not "data uploaded" in line and not "dl1:" in line and not "dl2:" in line:
+        if not "generated" in line and not "report date" in line and not "date/time" in line and not "run date" in line and not "print date" in line and not "valid upto" in line and not "data uploaded" in line and not "dl1:" in line and not "dl2:" in line and not "download" in line:
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
@@ -153,7 +153,7 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match3)>0:
         len(match3)
         return True
-        
+
     #matching with 4th pattern
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
@@ -199,9 +199,11 @@ def dateExt(text, fileuuid, meta, stkid):
             except ValueError:
                pass
     if len(match4)>0:
-        print(len(match4))
         return True
-input_file=open('wrongtry.json',encoding='utf8')
+    
+    #31 January 2021
+    #pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b'
+input_file=open('wrongtry3.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:

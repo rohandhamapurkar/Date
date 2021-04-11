@@ -1,13 +1,12 @@
-[
-    {
-        "_id": {
-            "$oid": "6027c726dc7d35bd201c1a53"
-        },
-        "uuid": "031ca1f8-b865-4d9f-8ace-0e67ca0b149c",
-        "stockistId": "0000002813",
-        "fileString": "SHIVLILAAGENCIES\n 735/3/10.INFRONTOFMATRUMANDIR,\n DHAGEMALA,KURDUWADIROAD,BARSHI,\n PH:223334,MOBILENo.8625818399,\n StockandSalesStatement\n Company:ALKEM ALFA-NEX\n 01/01/2021to30/01/2021",
-        "metaUsed": {
-            "$oid": "5f566500d3b25e87dc7aae50"
-        }
-    }
+[{
+	"_id": {
+		"$oid": "6027c708dc7d35bd201bf663"
+	},
+	"uuid": "786b9f5b-3759-48b7-95d1-47e7607c1db0",
+	"stockistId": "0000016227",
+	"fileString": "RIOBRANDS\n MR: NAGENDRA C Company: Alkem pentacare division Download: 01 February 2021\n Stockiest: VPI Medisales Report From: 01 January 2021 to 31 January 2021",
+	"metaUsed": {
+		"$oid": "5f76df16662020f844d567ce"
+	}
+}
 ]
