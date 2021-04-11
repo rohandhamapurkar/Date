@@ -31,7 +31,7 @@ def dateExt(text, fileuuid, meta, stkid):
     text=text.lower()
     prefinalText=''
     for line in text.splitlines():
-        if not "generated" in line and not "report date" in line and not "date/time" in line and not "run date" in line and not "print date" in line and not "valid upto" in line and not "data uploaded" in line:
+        if not "generated" in line and not "report date" in line and not "date/time" in line and not "run date" in line and not "print date" in line and not "valid upto" in line and not "data uploaded" in line and not "dl1:" in line and not "dl2:" in line:
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
