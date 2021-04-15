@@ -3,6 +3,7 @@ import re
 from datetime import date, datetime
 import os
 import sys
+import numpy as np
 
 def dateExt(text, fileuuid, meta, stkid):
     finalList=[]
@@ -23,7 +24,7 @@ def dateExt(text, fileuuid, meta, stkid):
             with open("dateJsonOutput.json", "a+") as outfile: 
                 json.dump(json_data, outfile, indent=4)
                 outfile.write(',\n')
-            dateList=[start_date, end_date, remark]
+            dateList=[start_date, end_date]
             return dateList
         else:
             start_date=date1
@@ -31,7 +32,7 @@ def dateExt(text, fileuuid, meta, stkid):
             with open("dateJsonOutput.json", "a+") as outfile:
                 json.dump(json_data, outfile, indent=4)
                 outfile.write(',\n')
-            dateList=[start_date, remark]
+            dateList=[start_date]
             return dateList
     finalText=''
     text=text.lower()
@@ -55,6 +56,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 2dates and dd/mm/yyyy pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                 finalList.append(res)
+                print(finalList)
             except ValueError:
                 pass
     if len(match)==1:
@@ -81,15 +83,38 @@ def dateExt(text, fileuuid, meta, stkid):
                 try:
                     date_one = datetime.strptime(tup1, frmt)
                     remark="matched with 1st pattern"
-                    patt1List=[date_one, remark]
+                    patt1List=[date_one]
                     finalList.append(patt1List)
+                    print(finalList)
                 except ValueError:
                    pass
-   
+
+
+    pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
+    match5 = re.findall(pattern5,finalText)
+    if len(match5) == 2:
+        tup1=match5[0]   #1st tuple from match list
+        tup2=match5[1]   #2nd tuple from match list
+        tup1='/'.join(tup1) #converting to string by "/"
+        tup2='/'.join(tup2)
+        print(tup1)
+        print(tup2)
+        for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
+            try:
+                date1 = datetime.strptime(tup1, frmt)
+                date2 = datetime.strptime(tup2, frmt)
+                remark="matching with 2dates and mm/dd/yyyy pattern"
+                res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                finalList.append(res)
+                print(finalList)
+            except ValueError:
+                pass
+
     #matching with 2nd pattern
     #(?<!\S)
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
+    print(match2)
     if len(match2)==2:
         tup1=match2[0]
         tup2=match2[1]
@@ -117,6 +142,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matching with 2dates and mm/yyyy pattern"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                     finalList.append(res)
+                    print(finalList)
                 except ValueError:
                     pass
     if len(match2)==1:
@@ -126,15 +152,17 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
                 remark="matching with 2nd pattern but 1 date"
-                patt2List= [date_one_only, remark]
+                print("match 2")
+                patt2List= [date_one_only]
                 finalList.append(patt2List)
+                print(finalList)
                 json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(date_one_only),"stockistId":stkid,"remark":remark}
                 with open("dateJsonOutput.json", "a+") as outfile: 
                     json.dump(json_data, outfile, indent=4)
                     outfile.write(',\n')
             except ValueError:
                pass
-
+    print("match 3")
     #matching with 3rd pattern
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
@@ -150,6 +178,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 2dates and yyyy/mm/dd pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                 finalList.append(res)
+                print(finalList)
             except ValueError:
                 pass
 
@@ -183,6 +212,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matching with 2dates and 4th pattern"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                     finalList.append(res)
+                    print(finalList)
                 except ValueError:
                     pass
     if len(match4)==1:
@@ -192,8 +222,9 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
                 remark="matching with 4th pattern but 1 date"
-                patt4List=[date_one_only,remark]
+                patt4List=[date_one_only]
                 finalList.append(patt4List)
+                print(finalList)
                 json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(date_one_only),"stockistId":stkid,"remark":remark}
                 with open("dateJsonOutput.json", "a+") as outfile: 
                     json.dump(json_data, outfile, indent=4)
@@ -201,29 +232,12 @@ def dateExt(text, fileuuid, meta, stkid):
             except ValueError:
                pass
     #jan 01, 2021 to :- jan 31, 2021
-    pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
-    match5 = re.findall(pattern5,finalText)
-    if len(match5) == 2:
-        tup1=match5[0]   #1st tuple from match list
-        tup2=match5[1]   #2nd tuple from match list
-        tup1='/'.join(tup1) #converting to string by "/"
-        tup2='/'.join(tup2)
-        print(tup1)
-        print(tup2)
-        for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
-            try:
-                date1 = datetime.strptime(tup1, frmt)
-                date2 = datetime.strptime(tup2, frmt)
-                remark="matching with 2dates and mm/dd/yyyy pattern"
-                res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                finalList.append(res)
-            except ValueError:
-                pass
-    lenFinal=len(finalList)
+
     if len(finalList)>0:
-        for i in finalList:
-            print(i,"print i\n")
-        return finalList
+        print("final List: ",finalList)
+        most=np.argmax([len(l) for l in finalList])
+        print(most,"most")
+        return most
 
 input_file=open('wrongtry3.json',encoding='utf8')
 json_array = json.load(input_file)

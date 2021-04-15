@@ -93,3 +93,195 @@
     "stockistId": "0000005423",
     "remark": "matching with 2nd pattern but 1 date"
 },
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-01-22 00:00:00",
+    "end_date  ": "2020-12-22 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-01-22 00:00:00",
+    "end_date  ": "2020-12-22 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-01-22 00:00:00",
+    "end_date  ": "2020-12-22 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "22-01-2020 and 22-12-2020, feb-2020",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "feb-2020 22-01-2020 and 22-12-2020, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-01-22 00:00:00",
+    "end_date  ": "2020-12-22 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020 22-01-2020 and 22-12-2020, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "feb-2020 22-01-2020 and 22-12-2020, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-01-22 00:00:00",
+    "end_date  ": "2020-12-22 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020 22-01-2020 and 22-12-2020, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "feb-2020 jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020 jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020 ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-01 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2nd pattern but 1 date"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "21-feb-2020 20-feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2020-02-20 00:00:00",
+    "end_date  ": "2020-02-21 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and dd/mm/yyyy pattern"
+},
+{
+    "fileStr": "21-feb-2020 20-feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
+{
+    "fileStr": "20-feb-2020  jan 01, 2021 to :- jan 31, 2021, ",
+    "uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
+    "metaUsed": "5ff6c2429b635411805b6d23",
+    "start_date": "2021-01-01 00:00:00",
+    "end_date  ": "2021-01-31 00:00:00",
+    "stockistId": "0000005423",
+    "remark": "matching with 2dates and mm/dd/yyyy pattern"
+},
