@@ -298,10 +298,9 @@ try:
                         outfile.write(',\n')
             else:
                 remark="no date found"
-                # json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                # with open("dateJsonOutput.json", "a+") as outfile: 
-                #     json.dump(json_data, outfile, indent=4)
-                #     outfile.write(',\n')
-                print(remark)
+                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
+                with open("dateJsonOutput.json", "a+") as outfile: 
+                    json.dump(json_data, outfile, indent=4)
+                    outfile.write(',\n')
 except UnicodeEncodeError:
     pass
