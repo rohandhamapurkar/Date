@@ -1,13 +1,13 @@
 [
-    {
-	"_id": {
-		"$oid": "6027c726dc7d35bd201c1a6d"
-	},
-	"uuid": "84327f9b-e671-493b-b499-fa3dd2c385c9",
-	"stockistId": "0000005423",
-	"fileString": "jan2020 feb2020",
-	"metaUsed": {
-		"$oid": "5ff6c2429b635411805b6d23"
+	{
+		"_id": {
+			"$oid": "6027c702dc7d35bd201bef18"
+		},
+		"uuid": "065a3d09-089c-46ac-bcf6-b9b6fa6136fd",
+		"stockistId": "0000000391",
+		"fileString": "D.JAMNADAS & CO (MALAD)D.JAMNADAS & CO (MALAD)\n Page 1 Of  1\n Stock Statment : ALKEM LAB LTD ORTHOKEM\n  30/01/21\n -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+		"metaUsed": {
+			"$oid": "60164bc6e7be06aceb8a4713"
+		}
 	}
-}
 ]

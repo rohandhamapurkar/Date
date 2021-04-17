@@ -36,7 +36,7 @@ def dateExt(text, fileuuid, meta, stkid):
 
     finalText=re.sub(' +',' ',prefinalText)
     print("match 1")
-    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b' #remove w+ and match only motnths
+    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
     if len(match)==2:
         tup1=match[0]   #1st tuple from match list
@@ -82,7 +82,7 @@ def dateExt(text, fileuuid, meta, stkid):
                    pass
 
     if len(match)>0:
-        print(len(match))
+        print(match)
         return True
     
 
