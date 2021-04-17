@@ -43,7 +43,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and dd/mm/yyyy pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                finalList.append(res)
+                #finalList.append(res)
             except ValueError:
                 pass
     elif len(match)==1:
@@ -62,7 +62,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and dd/mm/yyyy and dd/mm pattern"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                    finalList.append(res)
+                    #finalList.append(res)
                 except ValueError:
                    pass            
         else:
@@ -91,7 +91,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and mm/dd/yyyy pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                finalList.append(res)
+                #finalList.append(res)
             except ValueError:
                 pass
     if len(match5)==2:
@@ -139,7 +139,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2nd pattern but 2 date"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                    finalList.append(res)
+                    #finalList.append(res)
                 except ValueError:
                    pass
 
@@ -172,7 +172,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and yyyy/mm/dd pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                finalList.append(res)
+                #finalList.append(res)
             except ValueError:
                 pass
 
@@ -218,9 +218,21 @@ def dateExt(text, fileuuid, meta, stkid):
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and 4th pattern"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                    finalList.append(res)
+                    #finalList.append(res)
                 except ValueError:
-                    pass
+                    pass                
+        else:
+            tup1='/'.join(tup1)
+            tup2='/'.join(tup2)
+            for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
+                try:
+                    date1 = datetime.strptime(tup1, frmt)
+                    date2 = datetime.strptime(tup2, frmt)
+                    remark="matching with 2nd pattern but 2 date"
+                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    #finalList.append(res)
+                except ValueError:
+                   pass
     if len(match4)==1:
         tup1=match4[0]
         tup1='/'.join(tup1)
