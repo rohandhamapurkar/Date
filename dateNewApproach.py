@@ -11,27 +11,15 @@ def dateExt(text, fileuuid, meta, stkid):
         if date1>date2:
             start_date=date2
             end_date=date1
-            json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(start_date),"end_date  ":str(end_date),"stockistId":stkid,"remark":remark}
-            with open("dateJsonOutput.json", "a+") as outfile: 
-                json.dump(json_data, outfile, indent=4)
-                outfile.write(',\n')
             dateList=[start_date, end_date]
             return dateList
-        if date2>date1:
+        elif date2>date1:
             start_date=date1
             end_date=date2
-            json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(start_date),"end_date  ":str(end_date),"stockistId":stkid,"remark":remark}
-            with open("dateJsonOutput.json", "a+") as outfile: 
-                json.dump(json_data, outfile, indent=4)
-                outfile.write(',\n')
             dateList=[start_date, end_date]
             return dateList
         else:
             start_date=date1
-            json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(start_date),"stockistId":stkid,"remark":remark}
-            with open("dateJsonOutput.json", "a+") as outfile:
-                json.dump(json_data, outfile, indent=4)
-                outfile.write(',\n')
             dateList=[start_date]
             return dateList
     finalText=''
@@ -56,10 +44,9 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 2dates and dd/mm/yyyy pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                 finalList.append(res)
-                print(finalList)
             except ValueError:
                 pass
-    if len(match)==1:
+    elif len(match)==1:
         #again search for 01-jan
         #\n or \S
         tup1=match[0]
@@ -85,12 +72,12 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matched with 1st pattern"
                     patt1List=[date_one]
                     finalList.append(patt1List)
-                    print(finalList)
                 except ValueError:
                    pass
-        if len(match)==2:
+    if len(match)==2:
+        if len(res)>0:
             return res
-
+    #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
     if len(match5) == 2:
@@ -98,8 +85,6 @@ def dateExt(text, fileuuid, meta, stkid):
         tup2=match5[1]   #2nd tuple from match list
         tup1='/'.join(tup1) #converting to string by "/"
         tup2='/'.join(tup2)
-        print(tup1)
-        print(tup2)
         for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
             try:
                 date1 = datetime.strptime(tup1, frmt)
@@ -107,24 +92,21 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 2dates and mm/dd/yyyy pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                 finalList.append(res)
-                print(finalList)
             except ValueError:
                 pass
-
+    if len(match5)==2:
+        if len(res)>0:
+            return res
     #matching with 2nd pattern
     #(?<!\S)
-    print("match2")
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
-    print("match length",len(match2))
     if len(match2)==2:
         tup1=match2[0]
         tup2=match2[1]
         if tup1==tup2: #write code for not same dates
             lst1=list(tup1)
             lst2=list(tup2)
-            print(lst1)
-            print("lst2",lst2)
             if lst2[0]=="jan" or lst2[0]=="january" or lst2[0]=="mar" or lst2[0]=="march" or lst2[0]=="may" or lst2[0]=="aug" or lst2[0]=="august" or lst2[0]=="oct" or lst2[0]=="october" or lst2[0]=="dec" or lst2[0]=="december":
                 endDay="31"
                 
@@ -139,18 +121,28 @@ def dateExt(text, fileuuid, meta, stkid):
             tup2=tuple(lst2)
             tup1='/'.join(tup1)
             tup2='/'.join(tup2)
-            print("tup1",tup1)
-            print("tup1",tup2)
             for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and mm/yyyy pattern"
-                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                    finalList.append(res)
-                    print(finalList)
+                    res2=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    finalList.append(res2)
                 except ValueError:
                     pass
+        else:
+            tup1='/'.join(tup1)
+            tup2='/'.join(tup2)
+            for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
+                try:
+                    date1 = datetime.strptime(tup1, frmt)
+                    date2 = datetime.strptime(tup2, frmt)
+                    remark="matching with 2nd pattern but 2 date"
+                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    finalList.append(res)
+                except ValueError:
+                   pass
+
     if len(match2)==1:
         tup1=match2[0]
         tup1='/'.join(tup1)
@@ -158,18 +150,14 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
                 remark="matching with 2nd pattern but 1 date"
-                print("match 2")
                 patt2List= [date_one_only]
                 finalList.append(patt2List)
-                print(finalList)
-                json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(date_one_only),"stockistId":stkid,"remark":remark}
-                with open("dateJsonOutput.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
             except ValueError:
                pass
-    print("finalList",finalList)
-    print("match 3")
+    if len(match2)==2:
+        if len(res)>0:
+            return res
+
     #matching with 3rd pattern
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
@@ -185,10 +173,24 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 2dates and yyyy/mm/dd pattern"
                 res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                 finalList.append(res)
-                print(finalList)
             except ValueError:
                 pass
 
+    if len(match3)==1:
+        tup1=match3[0]   #1st tuple from match list
+        tup1='/'.join(tup1)
+        for frmt in ("%y/%m/%d","%Y/%m/%d","%Y/%B/%d","%Y/%b/%d","%y/%B/%d","%y/%b/%d"):
+            try:
+                date1 = datetime.strptime(tup1, frmt)
+                remark="matching with 2dates and yyyy/mm/dd pattern"
+                patt3List= [date_one_only]
+                finalList.append(patt3List)
+            except ValueError:
+                pass
+
+    if len(match3)==2:
+        if len(res)>0:
+            return res
     #matching with 4th pattern
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
@@ -200,10 +202,8 @@ def dateExt(text, fileuuid, meta, stkid):
             lst2=list(tup2)
             if lst2[0]=="jan" or lst2[0]=="january" or lst2[0]=="mar" or lst2[0]=="march" or lst2[0]=="may" or lst2[0]=="aug" or lst2[0]=="august" or lst2[0]=="oct" or lst2[0]=="october" or lst2[0]=="dec" or lst2[0]=="december":
                 endDay="31"
-                
             if lst2[0]=="feb" or lst2[0]=="february":
                 endDay="28"
-
             if lst2[0]=="apr" or lst2[0]=="april" or lst2[0]=="jun" or lst2[0]=="june" or lst2[0]=="jul" or lst2[0]=="july" or lst2[0]=="sept" or lst2[0]=="september" or lst2[0]=="nov" or lst2[0]=="november":
                 endDay="30"        
             lst1.insert(0,"01") 
@@ -219,7 +219,6 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matching with 2dates and 4th pattern"
                     res=dateComp(date1,date2,remark,text,stkid,fileuuid)
                     finalList.append(res)
-                    print(finalList)
                 except ValueError:
                     pass
     if len(match4)==1:
@@ -231,19 +230,14 @@ def dateExt(text, fileuuid, meta, stkid):
                 remark="matching with 4th pattern but 1 date"
                 patt4List=[date_one_only]
                 finalList.append(patt4List)
-                print(finalList)
-                json_data={"fileStr":text, "uuid":fileuuid,"metaUsed":meta,"start_date":str(date_one_only),"stockistId":stkid,"remark":remark}
-                with open("dateJsonOutput.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
             except ValueError:
                pass
-    #jan 01, 2021 to :- jan 31, 2021
+    if len(match4)==2:
+        if len(res)>0:
+            return res
 
     if len(finalList)>0:
-        print("final List: ",finalList)
         most=np.argmax([len(l) for l in finalList])
-        print(most,"most")
         return finalList[most]
 
 input_file=open('wrongtry3.json',encoding='utf8')
@@ -258,15 +252,33 @@ try:
         jsonstr1="\n".join(x for x in jsonstr1)
         jsonstr2=jsonstr.splitlines()[:1]
         jsonstr2="\n".join(x for x in jsonstr2)  
-        tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)      
+        tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)   
+        tp2=dateExt(jsonstr2,jsonuuid,jsonmeta,jsonstkid)   
         if tp1:
-            print("date found", jsonuuid)
-            print("outside Func",tp1)
+            print("1",tp1)
+            if len(tp1)==2:
+                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"end_date  ":str(tp1[1]),"stockistId":jsonstkid}
+                with open("dateJsonOutput.json", "a+") as outfile: 
+                    json.dump(json_data, outfile, indent=4)
+                    outfile.write(',\n')
+            elif len(tp1)==1:
+                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"stockistId":jsonstkid}
+                with open("dateJsonOutput.json", "a+") as outfile: 
+                    json.dump(json_data, outfile, indent=4)
+                    outfile.write(',\n')
         else:
-            tp2=dateExt(jsonstr2,jsonuuid,jsonmeta,jsonstkid)
             if tp2:
-                print("date found in 1st line",jsonuuid)
-                print("outside Func",tp2)
+                print("2",tp2)
+                if len(tp2)==2:
+                    json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"end_date  ":str(tp2[1]),"stockistId":jsonstkid}
+                    with open("dateJsonOutput.json", "a+") as outfile: 
+                        json.dump(json_data, outfile, indent=4)
+                        outfile.write(',\n')
+                elif len(tp2)==1:
+                    json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"stockistId":jsonstkid}
+                    with open("dateJsonOutput.json", "a+") as outfile: 
+                        json.dump(json_data, outfile, indent=4)
+                        outfile.write(',\n')
             else:
                 remark="no date found"
                 json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
