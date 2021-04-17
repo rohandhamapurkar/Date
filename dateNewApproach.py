@@ -80,7 +80,6 @@ def dateExt(text, fileuuid, meta, stkid):
         print(len(match))
         print(match)
         if len(res)>0:
-            print(match)
             return res
     #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
@@ -166,7 +165,6 @@ def dateExt(text, fileuuid, meta, stkid):
     #matching with 3rd pattern
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
-    print(match3)
     if len(match3)==2:
         tup1=match3[0]   #1st tuple from match list
         tup2=match3[1]   #2nd tuple from match list
@@ -277,32 +275,33 @@ try:
         print( "uuid", jsonuuid) 
         if tp1:
             if len(tp1)==2:
-                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"end_date  ":str(tp1[1]),"stockistId":jsonstkid}
-                with open("dateJsonOutput.json", "a+") as outfile: 
+                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"end_date":str(tp1[1]),"stockistId":jsonstkid}
+                with open("dateJsonOutput2.json", "a+") as outfile: 
                     json.dump(json_data, outfile, indent=4)
                     outfile.write(',\n')
             elif len(tp1)==1:
                 json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"stockistId":jsonstkid}
-                with open("dateJsonOutput.json", "a+") as outfile: 
+                with open("dateJsonOutput2.json", "a+") as outfile: 
                     json.dump(json_data, outfile, indent=4)
                     outfile.write(',\n')
         else:
             if tp2:
                 if len(tp2)==2:
-                    json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"end_date  ":str(tp2[1]),"stockistId":jsonstkid}
-                    with open("dateJsonOutput.json", "a+") as outfile: 
+                    json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"end_date":str(tp2[1]),"stockistId":jsonstkid}
+                    with open("dateJsonOutput2.json", "a+") as outfile: 
                         json.dump(json_data, outfile, indent=4)
                         outfile.write(',\n')
                 elif len(tp2)==1:
                     json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"stockistId":jsonstkid}
-                    with open("dateJsonOutput.json", "a+") as outfile: 
+                    with open("dateJsonOutput2.json", "a+") as outfile: 
                         json.dump(json_data, outfile, indent=4)
                         outfile.write(',\n')
             else:
                 remark="no date found"
-                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                with open("dateJsonOutput.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
+                # json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
+                # with open("dateJsonOutput.json", "a+") as outfile: 
+                #     json.dump(json_data, outfile, indent=4)
+                #     outfile.write(',\n')
+                print(remark)
 except UnicodeEncodeError:
     pass
