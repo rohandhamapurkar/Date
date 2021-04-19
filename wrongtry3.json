@@ -1,13 +1,13 @@
 [
 	{
 		"_id": {
-			"$oid": "6027c702dc7d35bd201bef18"
+			"$oid": "6027c705dc7d35bd201bf2de"
 		},
-		"uuid": "065a3d09-089c-46ac-bcf6-b9b6fa6136fd",
-		"stockistId": "0000000391",
-		"fileString": "D.JAMNADAS & CO (MALAD)D.JAMNADAS & CO (MALAD)\n Page 1 Of  1\n Stock Statment : ALKEM LAB LTD ORTHOKEM\n  30/01/21\n -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+		"uuid": "9976ba6a-ee28-45ca-9b45-de0c16d4670c",
+		"stockistId": "0000002293",
+		"fileString": "MINI INTERNATIONAL\n Stock Statement From  01/01/2021 To 31/01/2021\n Date:\n 01/02/2021 Page 1 of 1",
 		"metaUsed": {
-			"$oid": "60164bc6e7be06aceb8a4713"
+			"$oid": "5e5de5fff9ca603c48fb4762"
 		}
 	}
 ]
