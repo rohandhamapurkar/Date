@@ -20,12 +20,8 @@ for item in json_array1:
             jsondate2_end=item2['end_date']
             if jsonuuid==jsonuuid2:
                 if jsondate==jsondate2:
-                    if jsondate_end==jsondate2_end:
-                        print(jsondate,jsondate2,jsonuuid)
-                    else:
-                        print(jsondate,jsondate2,jsonuuid,"not same")
+                    print(jsondate,jsondate2,jsonuuid)
                 else:
                     print(jsondate,jsondate2,jsonuuid,"not same")
-        except (KeyError, UnicodeEncodeError, TypeError) as e:
-            print(e)
+        except (KeyError, UnicodeEncodeError, TypeError):
             pass
