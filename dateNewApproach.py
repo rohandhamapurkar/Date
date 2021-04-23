@@ -259,7 +259,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return finalList[most]
 #fileHeaderStringsv2
 #wrongtry3
-input_file=open('fileHeaderStringsv2.json',encoding='utf8')
+input_file=open('wrongtry.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
