@@ -3,7 +3,6 @@ import re
 from datetime import date, datetime
 import os   #optional
 import sys #optional
-import numpy as np
 
 def dateExt(text, fileuuid, meta, stkid):
     finalList=[]
@@ -34,6 +33,7 @@ def dateExt(text, fileuuid, meta, stkid):
     match = re.findall(pattern1,finalText)
     print(match,"m1")
     res=[]
+    match1_2=[]
     if len(match)==2:
         tup1=match[0]   #1st tuple from match list
         tup2=match[1]   #2nd tuple from match list
@@ -56,6 +56,7 @@ def dateExt(text, fileuuid, meta, stkid):
         pattern1_2=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[\s][- \/.,](\d{4}|\d{2})'
         match1_2 = re.findall(pattern1_2,finalText)
         print(match1_2)
+        #31-jan -21
         if match1_2:
             tup2=match1_2[0]
             tup2='/'.join(tup2)
@@ -84,14 +85,10 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match)==2:
         if len(res)>0:
             return res
-    print(fileuuid)
-    try:
-        if len(match1_2)==1:
-            print("res",res)
-            if len(res)>0:
-                return res    
-    except UnboundLocalError:
-        pass
+
+    if len(match1_2)==1:
+        if len(res)>0:
+            return res
     #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
@@ -314,8 +311,9 @@ try:
                         outfile.write(',\n')
             else:
                 finalText_end=''
+                #date ddmmyy  date: \n ddmmyy
                 for line in jsonstr.splitlines():
-                    if not "Date:" in line and not "Date :" in line and not "Date:\n" in line:
+                    if not "Date:" in line and not "Date :" in line:
                         finalText_end=finalText_end+"\n"+line
                 jsonstr3=finalText_end
                 tp3=dateExt(jsonstr3,jsonuuid,jsonmeta,jsonstkid)
@@ -333,3 +331,7 @@ try:
                         outfile.write(',\n')
 except UnicodeEncodeError:
     pass
+
+#{"startDate":"data","endDate":"data2"},
+
+#python3 script.py "str"
