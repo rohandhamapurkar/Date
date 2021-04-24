@@ -281,9 +281,7 @@ try:
         jsonstr1="\n".join(x for x in jsonstr1)
         jsonstr2=jsonstr.splitlines()[:1]
         jsonstr2="\n".join(x for x in jsonstr2)  
-        tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)   
-          
-        print( "uuid", jsonuuid) 
+        tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)
         if tp1:
             if len(tp1)==2:
                 json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp1[0]),"end_date":str(tp1[1]),"stockistId":jsonstkid}
@@ -331,7 +329,7 @@ try:
                         outfile.write(',\n')
 except UnicodeEncodeError:
     pass
-
+#todo date:\n to date:
 #{"startDate":"data","endDate":"data2"},
 
 #python3 script.py "str"
