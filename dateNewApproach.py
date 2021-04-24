@@ -30,9 +30,9 @@ def dateExt(text, fileuuid, meta, stkid):
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
-    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})\b' #remove w+ and match only motnths
+    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
-    print(match)
+    print(match,"m1")
     res=[]
     if len(match)==2:
         tup1=match[0]   #1st tuple from match list
@@ -55,9 +55,12 @@ def dateExt(text, fileuuid, meta, stkid):
         tup1='/'.join(tup1)
         pattern1_2=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[\s][- \/.,](\d{4}|\d{2})'
         match1_2 = re.findall(pattern1_2,finalText)
+        print(match1_2)
         if match1_2:
             tup2=match1_2[0]
             tup2='/'.join(tup2)
+            print("tup1",tup1)
+            print(tup2,"tup2")
             for frmt in ("%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
@@ -75,16 +78,24 @@ def dateExt(text, fileuuid, meta, stkid):
                     remark="matched with 1st pattern"
                     patt1List=[date_one]
                     finalList.append(patt1List)
+                    print(finalList,"finalList append")
                 except ValueError:
                    pass
     if len(match)==2:
-        print(len(match))
-        print(match)
         if len(res)>0:
             return res
+    print(fileuuid)
+    try:
+        if len(match1_2)==1:
+            print("res",res)
+            if len(res)>0:
+                return res    
+    except UnboundLocalError:
+        pass
     #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
+    print(match5,"m5")
     if len(match5) == 2:
         tup1=match5[0]   #1st tuple from match list
         tup2=match5[1]   #2nd tuple from match list
@@ -106,6 +117,7 @@ def dateExt(text, fileuuid, meta, stkid):
     #(?<!\S)
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
+    print(match2,"m2")
     if len(match2)==2:
         tup1=match2[0]
         tup2=match2[1]
@@ -166,6 +178,7 @@ def dateExt(text, fileuuid, meta, stkid):
     #matching with 3rd pattern
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
+    print(match3,"m3")
     if len(match3)==2:
         tup1=match3[0]   #1st tuple from match list
         tup2=match3[1]   #2nd tuple from match list
@@ -194,12 +207,12 @@ def dateExt(text, fileuuid, meta, stkid):
                 pass
 
     if len(match3)==2:
-        print(len(match3))
         if len(res)>0:
             return res
     #matching with 4th pattern
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
+    print(match4,"match4")
     if len(match4)==2:
         tup1=match4[0]
         tup2=match4[1]
@@ -255,8 +268,8 @@ def dateExt(text, fileuuid, meta, stkid):
             return res
 
     if len(finalList)>0:
-        most=np.argmax([len(l) for l in finalList])
-        return finalList[most]
+        #most=np.argmax([len(l) for l in finalList])
+        return finalList[0]
 #fileHeaderStringsv2
 #wrongtry3
 input_file=open('wrongtry.json',encoding='utf8')
@@ -272,7 +285,7 @@ try:
         jsonstr2=jsonstr.splitlines()[:1]
         jsonstr2="\n".join(x for x in jsonstr2)  
         tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)   
-        tp2=dateExt(jsonstr2,jsonuuid,jsonmeta,jsonstkid)  
+          
         print( "uuid", jsonuuid) 
         if tp1:
             if len(tp1)==2:
@@ -287,6 +300,7 @@ try:
                     json.dump(json_data, outfile, indent=4)
                     outfile.write(',\n')
         else:
+            tp2=dateExt(jsonstr2,jsonuuid,jsonmeta,jsonstkid)
             if tp2:
                 if len(tp2)==2:
                     json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp2[0]),"end_date":str(tp2[1]),"stockistId":jsonstkid}
