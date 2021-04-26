@@ -6,7 +6,7 @@ import sys #optional
 
 def dateExt(text, fileuuid, meta, stkid):
     finalList=[]
-    def dateComp(date1,date2,remark,text,stkid,fileuuid):
+    def dateComp(date1,date2,text,stkid,fileuuid):
         if date1>date2:
             start_date=date2
             end_date=date1
@@ -44,15 +44,37 @@ def dateExt(text, fileuuid, meta, stkid):
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and dd/mm/yyyy pattern"
-                res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                res=dateComp(date1,date2,text,stkid,fileuuid)
                 #finalList.append(res)
             except ValueError:
                 pass
     elif len(match)>2:
+        lstdate=[]
+        patt1List_mul=[]
         for i in range(len(match)):
-            locals()[f'tup{i}']=match[i]
-            locals()[f'tup{i}']='/'.join(locals()[f'tup{i}'])
-
+            # locals()[f'tup{i}']=match[i]
+            # locals()[f'tup{i}']='/'.join(locals()[f'tup{i}'])
+            # print("date",locals()[f'tup{i}'])
+            tup=match[i]
+            tup='/'.join(tup)
+            for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
+                try:
+                    date1 = datetime.strptime(tup, frmt)
+                    lstdate.append(date1)
+                except ValueError:
+                    pass
+        print(lstdate)
+        for i in lstdate:
+            print("debu")
+            curyr=date.today().year
+            if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
+                patt1List_mul.append(i)
+                print(patt1List_mul,"mul")
+        if len(patt1List_mul)==2:
+            res=dateComp(patt1List_mul[0],patt1List_mul[1],text,stkid,fileuuid)
+        elif len(patt1List_mul)==1:
+            finalList.append(patt1List_mul)
+            print("final",finalList)
     elif len(match)==1:
         #again search for 01-jan
         #\n or \S
@@ -70,7 +92,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and dd/mm/yyyy and dd/mm pattern"
-                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    res=dateComp(date1,date2,text,stkid,fileuuid)
                     #finalList.append(res)
                 except ValueError:
                     pass
@@ -92,6 +114,10 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match1_2)==1:
         if len(res)>0:
             return res
+    if len(match)>2:
+        if len(res)>0:
+            return res
+
     #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
@@ -106,7 +132,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and mm/dd/yyyy pattern"
-                res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                res=dateComp(date1,date2,text,stkid,fileuuid)
                 #finalList.append(res)
             except ValueError:
                 pass
@@ -155,7 +181,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2nd pattern but 2 date"
-                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    res=dateComp(date1,date2,text,stkid,fileuuid)
                     #finalList.append(res)
                 except ValueError:
                    pass
@@ -179,6 +205,7 @@ def dateExt(text, fileuuid, meta, stkid):
     pattern3=r'\b(\d{4}|\d{2})[- \/.,](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0[1-9]|[12][0-9]|3[01])\b'
     match3 = re.findall(pattern3,finalText)
     print(match3,"m3")
+    print(text)
     if len(match3)==2:
         tup1=match3[0]   #1st tuple from match list
         tup2=match3[1]   #2nd tuple from match list
@@ -189,7 +216,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
                 remark="matching with 2dates and yyyy/mm/dd pattern"
-                res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                res=dateComp(date1,date2,text,stkid,fileuuid)
                 #finalList.append(res)
             except ValueError:
                 pass
@@ -236,7 +263,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and 4th pattern"
-                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    res=dateComp(date1,date2,text,stkid,fileuuid)
                     #finalList.append(res)
                 except ValueError:
                     pass                
@@ -248,7 +275,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2nd pattern but 2 date"
-                    res=dateComp(date1,date2,remark,text,stkid,fileuuid)
+                    res=dateComp(date1,date2,text,stkid,fileuuid)
                     #finalList.append(res)
                 except ValueError:
                    pass
@@ -272,7 +299,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return finalList[0]
 #fileHeaderStringsv2
 #wrongtry3
-input_file=open('fileHeaderStringsv2.json',encoding='utf8')
+input_file=open('wrongtry2.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
@@ -284,6 +311,9 @@ try:
         jsonstr1="\n".join(x for x in jsonstr1)
         jsonstr2=jsonstr.splitlines()[:1]
         jsonstr2="\n".join(x for x in jsonstr2)  
+        print("1",jsonstr)
+        print("3",jsonstr2)
+        print("2",jsonstr1)
         tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)
         if tp1:
             if len(tp1)==2:
