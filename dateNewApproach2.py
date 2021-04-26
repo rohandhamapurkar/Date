@@ -169,8 +169,7 @@ def dateExt(text, fileuuid, meta, stkid):
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
                     remark="matching with 2dates and mm/yyyy pattern"
-                    res2=dateComp(date1,date2,remark,text,stkid,fileuuid)
-                    finalList.append(res2)
+                    res=dateComp(date1,date2,text,stkid,fileuuid)
                 except ValueError:
                     pass
         else:
@@ -299,7 +298,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return finalList[0]
 #fileHeaderStringsv2
 #wrongtry3
-input_file=open('wrongtry2.json',encoding='utf8')
+input_file=open('fileHeaderStringsv2.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
