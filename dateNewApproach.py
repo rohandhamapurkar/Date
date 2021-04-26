@@ -29,7 +29,7 @@ def dateExt(text, fileuuid, meta, stkid):
             prefinalText=prefinalText+"\n"+line
 
     finalText=re.sub(' +',' ',prefinalText)
-    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})' #remove w+ and match only motnths
+    pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
     print(match,"m1")
     res=[]
@@ -112,7 +112,7 @@ def dateExt(text, fileuuid, meta, stkid):
             return res
     #matching with 2nd pattern
     #(?<!\S)
-    pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](\d{4}|\d{2})\b"
+    pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,'](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
     print(match2,"m2")
     if len(match2)==2:
@@ -269,7 +269,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return finalList[0]
 #fileHeaderStringsv2
 #wrongtry3
-input_file=open('wrongtry.json',encoding='utf8')
+input_file=open('fileHeaderStringsv2.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
     for item in json_array:
@@ -309,7 +309,6 @@ try:
                         outfile.write(',\n')
             else:
                 finalText_end=''
-                #date ddmmyy  date: \n ddmmyy
                 for line in jsonstr.splitlines():
                     if not "Date:" in line and not "Date :" in line:
                         finalText_end=finalText_end+"\n"+line
