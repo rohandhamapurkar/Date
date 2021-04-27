@@ -50,7 +50,7 @@ def dateExt(text, fileuuid, meta, stkid):
                 pass
     elif len(match)>2:
         lstdate=[]
-        patt1List_mul=[]
+        pattList_multiple=[]
         for i in range(len(match)):
             # locals()[f'tup{i}']=match[i]
             # locals()[f'tup{i}']='/'.join(locals()[f'tup{i}'])
@@ -68,12 +68,12 @@ def dateExt(text, fileuuid, meta, stkid):
             print("debu")
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
-                patt1List_mul.append(i)
-                print(patt1List_mul,"mul")
-        if len(patt1List_mul)==2:
-            res=dateComp(patt1List_mul[0],patt1List_mul[1],text,stkid,fileuuid)
-        elif len(patt1List_mul)==1:
-            finalList.append(patt1List_mul)
+                pattList_multiple.append(i)
+                print(pattList_multiple,"mul")
+        if len(pattList_multiple)==2:
+            res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
+        elif len(pattList_multiple)==1:
+            finalList.append(pattList_multiple)
             print("final",finalList)
     elif len(match)==1:
         #again search for 01-jan
@@ -131,14 +131,49 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
-                remark="matching with 2dates and mm/dd/yyyy pattern"
                 res=dateComp(date1,date2,text,stkid,fileuuid)
                 #finalList.append(res)
+            except ValueError:
+                pass
+    elif len(match5)>2:
+        lstdate=[]
+        pattList_multiple=[]
+        for i in range(len(match)):
+            tup=match[i]
+            tup='/'.join(tup)
+            for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
+                try:
+                    date1 = datetime.strptime(tup, frmt)
+                    lstdate.append(date1)
+                except ValueError:
+                    pass
+        for i in lstdate:
+            curyr=date.today().year
+            if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
+                pattList_multiple.append(i)
+                print(pattList_multiple,"mul")
+        if len(pattList_multiple)==2:
+            res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
+        elif len(pattList_multiple)==1:
+            finalList.append(pattList_multiple)
+    elif len(match5)==1:
+        tup1=match5[0]   #1st tuple from match list
+        tup1='/'.join(tup1)
+        for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
+            try:
+                date_one = datetime.strptime(tup1, frmt)
+                patt5List=[date_one]
+                finalList.append(patt5List)
             except ValueError:
                 pass
     if len(match5)==2:
         if len(res)>0:
             return res
+
+    if len(match5)>2:
+        if len(res)>0:
+            return res
+
     #matching with 2nd pattern
     #(?<!\S)
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,'](\d{4}|\d{2})\b"
@@ -184,8 +219,32 @@ def dateExt(text, fileuuid, meta, stkid):
                     #finalList.append(res)
                 except ValueError:
                    pass
+    elif len(match2)>2:
+        lstdate=[]
+        pattList_multiple=[]
+        for i in range(len(match)):
+            tup=match[i]
+            tup='/'.join(tup)
+            for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
+                try:
+                    date1 = datetime.strptime(tup, frmt)
+                    lstdate.append(date1)
+                except ValueError:
+                    pass
+        print(lstdate)
+        for i in lstdate:
+            print("debu")
+            curyr=date.today().year
+            if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
+                pattList_multiple.append(i)
+                print(pattList_multiple,"mul")
+        if len(pattList_multiple)==2:
+            res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
+        elif len(pattList_multiple)==1:
+            finalList.append(pattList_multiple)
+            print("final",finalList)
 
-    if len(match2)==1:
+    elif len(match2)==1:
         tup1=match2[0]
         tup1='/'.join(tup1)
         for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
@@ -197,6 +256,10 @@ def dateExt(text, fileuuid, meta, stkid):
             except ValueError:
                pass
     if len(match2)==2:
+        if len(res)>0:
+            return res
+
+    if len(match2)>2:
         if len(res)>0:
             return res
 
@@ -214,19 +277,38 @@ def dateExt(text, fileuuid, meta, stkid):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
-                remark="matching with 2dates and yyyy/mm/dd pattern"
                 res=dateComp(date1,date2,text,stkid,fileuuid)
-                #finalList.append(res)
             except ValueError:
                 pass
+    elif len(match3)>2:
+        lstdate=[]
+        pattList_multiple=[]
+        for i in range(len(match)):
+            tup=match[i]
+            tup='/'.join(tup)
+            for frmt in ("%y/%m/%d","%Y/%m/%d","%Y/%B/%d","%Y/%b/%d","%y/%B/%d","%y/%b/%d"):
+                try:
+                    date1 = datetime.strptime(tup, frmt)
+                    lstdate.append(date1)
+                except ValueError:
+                    pass
+        print(lstdate)
+        for i in lstdate:
+            curyr=date.today().year
+            if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
+                pattList_multiple.append(i)
+                print(pattList_multiple,"mul")
+        if len(pattList_multiple)==2:
+            res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
+        elif len(pattList_multiple)==1:
+            finalList.append(pattList_multiple)
 
-    if len(match3)==1:
+    elif len(match3)==1:
         tup1=match3[0]   #1st tuple from match list
         tup1='/'.join(tup1)
         for frmt in ("%y/%m/%d","%Y/%m/%d","%Y/%B/%d","%Y/%b/%d","%y/%B/%d","%y/%b/%d"):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
-                remark="matching with 2dates and yyyy/mm/dd pattern"
                 patt3List= [date_one_only]
                 finalList.append(patt3List)
             except ValueError:
@@ -235,6 +317,11 @@ def dateExt(text, fileuuid, meta, stkid):
     if len(match3)==2:
         if len(res)>0:
             return res
+
+    if len(match3)>2:
+        if len(res)>0:
+            return res
+
     #matching with 4th pattern
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
@@ -278,18 +365,43 @@ def dateExt(text, fileuuid, meta, stkid):
                     #finalList.append(res)
                 except ValueError:
                    pass
-    if len(match4)==1:
+
+    elif len(match4)>2:
+        lstdate=[]
+        pattList_multiple=[]
+        for i in range(len(match)):
+            tup=match[i]
+            tup='/'.join(tup)
+            for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
+                try:
+                    date1 = datetime.strptime(tup, frmt)
+                    lstdate.append(date1)
+                except ValueError:
+                    pass
+        for i in lstdate:
+            curyr=date.today().year
+            if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
+                pattList_multiple.append(i)
+        if len(pattList_multiple)==2:
+            res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
+        elif len(pattList_multiple)==1:
+            finalList.append(pattList_multiple)
+
+    elif len(match4)==1:
         tup1=match4[0]
         tup1='/'.join(tup1)
         for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
-                remark="matching with 4th pattern but 1 date"
                 patt4List=[date_one_only]
                 finalList.append(patt4List)
             except ValueError:
                pass
     if len(match4)==2:
+        if len(res)>0:
+            return res
+
+    if len(match4)>2:
         if len(res)>0:
             return res
 
