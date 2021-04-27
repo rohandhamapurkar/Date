@@ -1,57 +1,34 @@
-[
-	{
-		"_id": {
-			"$oid": "6027c6fddc7d35bd201bea0d"
-		},
-		"uuid": "c3dc692c-90e1-434d-ba37-82e82816a716",
-		"stockistId": "0000014223",
-		"fileString": " \u001bM    \u000e          BHARAT PHARMA          \n                     Stock statement from 28/12/2020 to 27/01/2021             Date : 27/01/2021 \n                                                                               Page : 1   \n------------------------------------------------------------------------------------------------ ",
-		"metaUsed": {
-			"$oid": "5eb5b348d0c8b4329e7c355e"
-		}
+[{
+	"_id": {
+		"$oid": "6087ed503bef4073de592593"
 	},
-	{
-		"_id": {
-			"$oid": "6027c700dc7d35bd201bec0e"
-		},
-		"uuid": "8a3ecaea-b9f7-4375-bfb0-fe784b1b0e88",
-		"stockistId": "0000002077",
-		"fileString": "PAVITHRA MEDICAL AGENCIES\n 2-2-141,BOIWADA,BOIWADA,KARIMNAGAR\n DL.No : 20B/337/TG/KN/99/R/WS,21B/313/TG/KN/99/R/WS\n GSTIN : 36AAEFP4686M1ZL\n Phone : 9849152828,8500000436\n Stock & Sales Statement\n From 01/01/2021 To 30/01/2021                                                        Page : 1",
-		"metaUsed": {
-			"$oid": "5e5b0149c1ecbc5840e27e72"
-		}
+	"uuid": "c9c17ea5-f496-4bac-857f-68fbafffda4d",
+	"stockistId": "0000000295",
+	"metaUsed": {
+		"$oid": "606901b9eaa2ab8c9ecc4edf"
 	},
-	{
-		"_id": {
-			"$oid": "6027c700dc7d35bd201beca8"
-		},
-		"uuid": "62df5b01-d2f4-49b4-b1f7-274aa4972b7b",
-		"stockistId": "0000001655",
-		"fileString": "SRI VENKATESHWARA AGENCIES\n 8-11-38 OPP.FOREST OFFICE K.E.B ROAD, BIDAR-585401\n Phone : 9740031611 Fax : 08482-225990 E-Mail : gururaj.mylapur@gmail.com\n Licence No. : KA/BD2/20B/122244-21B/122245\n ALKEM  DIABETALOGY DIVISION STOCK & SALES STATEMENT 01-01-2021 - 30-01-2021\n ",
-		"metaUsed": {
-			"$oid": "6015c194e7be06aceb8933b2"
-		}
+	"fileString": "BETA AGENCIES & PROJECTS PVT. LTD., \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n31/03/2021 Page 1 of 5 \n"
+},
+{
+	"_id": {
+		"$oid": "6087ed293bef4073de58fc1f"
 	},
-	{
-		"_id": {
-			"$oid": "6027c701dc7d35bd201becbb"
-		},
-		"uuid": "028cca90-dd50-477e-af68-c269b26b1626",
-		"stockistId": "0000003139",
-		"fileString": "\u001bM\u001bCH \n\u000ePATWARI PHARMA \n\"JP ALTURAS\",PLOT NO.7,6-3-342  \nNEW BHOIGUDA  \nSECUNDERABAD \n  \nStock and Sales report for the company ALKEM \nbetween 01/01/2021 and 30/01/2021                               Page - 1 \n------------------------------------------------------------------------------------------------- ",
-		"metaUsed": {
-			"$oid": "5e0c4fdcb6c0a41a2bbeda17"
-		}
+	"uuid": "f41dfce0-b23f-43ed-ac68-c5843a25e53e",
+	"stockistId": "0000016992",
+	"metaUsed": {
+		"$oid": "5dbeae6a74da7d0f4b4fe578"
 	},
-	{
-		"_id": {
-			"$oid": "6027c701dc7d35bd201bed64"
-		},
-		"uuid": "13aa8a52-2ddc-46cc-a4a7-79ad4f1fdfce",
-		"stockistId": "0000003453",
-		"fileString": "Reliance Drugs\n KALPETTA\n Stock & Sales Statement for the month of Jan'21",
-		"metaUsed": {
-			"$oid": "5cff8a6831d0800be4923dfa"
-		}
-	}
+	"fileString": "\u001bM    \u000e     BALLABH AGENCIES, BHOPAL     \n                     Stock statement from 26/02/2021 to 25/03/2021             Date : 25/03/2021  \n                                                                               Page : 1    \n------------------------------------------------------------------------------------------------  \n"
+},
+{
+	"_id": {
+		"$oid": "6087ed4e3bef4073de592411"
+	},
+	"uuid": "152f3b77-baa7-45a1-bcc7-9a4176120dea",
+	"stockistId": "0000020866",
+	"metaUsed": {
+		"$oid": "601a0ef2e7be06aceb16a308"
+	},
+	"fileString": "DRK ENTERPRISES \nSHREE ARCADE, WARD NO.29, KHATA NO 93/93/298, SAVERLINE ROAD, SHIVAMOGGA 577201 \nSTOCK AND SALES \nFrom  01-Mar-2021  To 31-Mar-2021 (Sale Report Updated Till : 01-Apr-2021) \nCompany:ALKEM DIABITOLOGY \nAddress: \n"
+}
 ]

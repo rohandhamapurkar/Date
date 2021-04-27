@@ -31,7 +31,6 @@ def dateExt(text, fileuuid, meta, stkid):
     finalText=re.sub(' +',' ',prefinalText)
     pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
-    print(match,"m1")
     res=[]
     match1_2=[]
     if len(match)==2:
@@ -410,6 +409,7 @@ def dateExt(text, fileuuid, meta, stkid):
         return finalList[0]
 #fileHeaderStringsv2
 #wrongtry3
+#fileHeaderStringsMarch
 input_file=open('fileHeaderStringsMarch.json',encoding='utf8')
 json_array = json.load(input_file)
 try:
@@ -421,10 +421,7 @@ try:
         jsonstr1=jsonstr.splitlines()[1:]
         jsonstr1="\n".join(x for x in jsonstr1)
         jsonstr2=jsonstr.splitlines()[:1]
-        jsonstr2="\n".join(x for x in jsonstr2)  
-        print("1",jsonstr)
-        print("3",jsonstr2)
-        print("2",jsonstr1)
+        jsonstr2="\n".join(x for x in jsonstr2)
         tp1=dateExt(jsonstr1,jsonuuid,jsonmeta,jsonstkid)
         if tp1:
             if len(tp1)==2:
@@ -455,6 +452,7 @@ try:
                 finalText_end=''
                 jsonstr=jsonstr.replace("Date :\n","Date:")
                 jsonstr=jsonstr.replace("Date:\n","Date:")
+                jsonstr=jsonstr.replace("Date: \n","Date:")
                 for line in jsonstr.splitlines():
                     if not "Date:" in line and not "Date :" in line:
                         finalText_end=finalText_end+"\n"+line
@@ -466,12 +464,18 @@ try:
                         with open("dateJsonOutput2.json", "a+") as outfile: 
                             json.dump(json_data, outfile, indent=4)
                             outfile.write(',\n')
+                    elif len(tp3)==1:
+                        json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp3[0]),"stockistId":jsonstkid}
+                        with open("dateJsonOutput2.json", "a+") as outfile: 
+                            json.dump(json_data, outfile, indent=4)
+                            outfile.write(',\n')
                 else:
                     remark="no date found"
                     json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                    with open("dateNotFound.json", "a+") as outfile: 
+                    with open("dateNotFound2.json", "a+") as outfile: 
                         json.dump(json_data, outfile, indent=4)
                         outfile.write(',\n')
+                    print(remark,jsonuuid,jsonstr)
 except UnicodeEncodeError:
     pass
 #todo date:\n to date:

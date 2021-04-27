@@ -606,7 +606,7 @@
     "metaUsed": "5dbeae6a74da7d0f4b4fe578",
     "stockistId": "0000016992",
     "remark": "no date found"
-},//DateFound
+},
 {
     "fileStr": "",
     "uuid": "c341fed7-6d91-4407-a7b7-751198557203",
@@ -893,7 +893,7 @@
     "metaUsed": "5d945a50a111893573b1b223",
     "stockistId": "0000003170",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "ATM PHARMA AND GENERAL DISTRIBUTORS \nCTS NO. 1423/A, 1ST FLOOR,, BASWAN GALLI,, BELAGAVI 590001 \nSTOCK AND SALE \n",
     "uuid": "00944d29-c9fb-4b0c-9bb1-3f70296160e2",
@@ -1033,7 +1033,7 @@
     "metaUsed": "5e351016b5fe2e4ccecca69a",
     "stockistId": "0000001278",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "SRI SUDHARSAN AGENCIES-KUMBAKONAM                               ALKEM -BURGEON ASTA                               Page No : 1 \nSTOCK & SALES STATEMENT for The Month of Mar - 2021 \n",
     "uuid": "ecb4a4a5-44e5-4e7c-92c2-6ba6a3be82f4",
@@ -1075,7 +1075,7 @@
     "metaUsed": "5d5248f59059da163c96caa5",
     "stockistId": "0000000575",
     "remark": "no date found"
-},//seperated by dot
+},
 {
     "fileStr": "\u001bM    \u000e    BR.PRIYANKA SALES AGENCIES    \n                     Stock statement from 01/03/2021 to 31/03/2021             Date : 27/03/2021  \n                                                                               Page : 1    \n------------------------------------------------------------------------------------------------  \n",
     "uuid": "82cbfba1-b573-44ac-b897-79aa27db5143",
@@ -1124,7 +1124,7 @@
     "metaUsed": "5e0d1b78a1cd071a0d53ca7b",
     "stockistId": "0000000336",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "M.E. NAME -        GURPREET ALKEM ALPHA NEX__2019-20 \nH.Q.- MANSA \nMONTH :  JUNE \n",
     "uuid": "941867ed-9b8e-45a8-98d7-a97667f15b1c",
@@ -1341,7 +1341,7 @@
     "metaUsed": "5d93adf9f3573b4851468cc5",
     "stockistId": "0000000315",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \n\u000eBHARGAVI MEDICAL AGENCIES  \n1-3-1038, MAIN ROAD,METPALLY-505 325  \n  \nMONTHLY STOCK & SALES STATEMENT FOR THE MONTH OF March '2021  \n  \n\u0012  \nCOMPANY NAME :\u000eALKEM (ULTICARE)                \n\u000f  \nFROM :01/03/2021  TO  31/03/2021                                        TIME :11:27:44     DATE :31/03/2021  \n============================================================================================================================  \n",
     "uuid": "76ff83a8-3a1e-4063-b8ea-b247df06e0a2",
@@ -1376,14 +1376,14 @@
     "metaUsed": "5d93adf9f3573b4851468cc5",
     "stockistId": "0000000315",
     "remark": "no date found"
-}, //dateFound
+},
 {
     "fileStr": "\u001bM    \u000e            OM PHARMACEUTICAL         \n37, L.G., DAWA BAZAR R.N.T. MARG INDORE                                                           \nPh.No.: O:2704926, 2700914,Mob: 9926462230                                                        \n                     Stock statement from 01/03/2021 to 30/03/2021             Date : 30/03/2021  \n                                                                               Page : 1    \n------------------------------------------------------------------------------------------------  \n",
     "uuid": "05a7f739-7b2c-45a2-8899-9b9122552906",
     "metaUsed": "5e602efbce38132048b57d19",
     "stockistId": "0000001996",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "Invoicing Registration Form - Warehouse Management \nInventory Item List \nDescription: \nLister:                  Department:                                                                  Document code: \nType:                        Name:                                 Specification:                    Unit:                   Location: \nDate Summary Storage Out of the library Balance \nMonth Day Quantity Price Amount Quantity Price Amount Quantity Price Amount \n2019 8888 \n1 1 300 4 1200 280 5 1400 20 8688 \n1 2 500 3.5 1750 510 5 2550 10 7888 \n1 3 0 0 10 7888 \n1 4 0 0 10 7888 \n1 5 0 0 10 7888 \n1 6 0 0 10 7888 \n7 0 0 10 7888 \n8 0 0 10 7888 \n9 0 0 10 7888 \n10 0 0 10 7888 \n11 0 0 10 7888 \n12 0 0 10 7888 \n13 0 0 10 7888 \n14 0 0 10 7888 \n15 0 0 10 7888 \n16 0 0 10 7888 \n17 0 0 10 7888 \n18 0 0 10 7888 \n19 0 0 10 7888 \n20 0 0 10 7888 \n21 0 0 10 7888 \n22 0 0 10 7888 \n23 0 0 10 7888 \n24 0 0 10 7888 \n25 0 0 10 7888 \n26 0 0 10 7888 \n27 0 0 10 7888 \n28 0 0 10 7888 \n29 0 0 10 7888 \n30 0 0 10 7888 \n31 0 0 10 7888 \nTotal 2950 3950 10 6888 \nHARISH MEDICAL AGENCY \nSALES STOCK STATEMENT AS ON 31.03.2021  \nOP.BAL. DT.: 27.02.20 CURR.MONTH : FROM 01.03.20 TO 31.03.20 COMPANY : \nPRINTED ON : 27.03.20 PREV.MONTH : FROM 01.02.20 TO 28.02.20 ALKEM ULTICARE \n",
     "uuid": "b9804977-33e1-4704-909e-ff9888ba98e4",
@@ -1404,7 +1404,7 @@
     "metaUsed": "5e8e2633e629fb07576a7a05",
     "stockistId": "0000001546",
     "remark": "no date found"
-}, //dateFound
+},
 {
     "fileStr": "NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE NEW MEDICAL STORE \nCENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD CENTRAL BANK ROAD \nPADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA PADRAUNA \nTel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com Tel.:9415277452,9918716129 Fax:8400257651.9695326940 EMail:nmspadrauna@rediffmail.com \n(From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) (From 28/02/2021 To 30/03/2021) \nSaleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 Saleable Stock Report                                          Page No. :      1 \n",
     "uuid": "4f595828-c367-46a8-bb3f-00fcede44715",
@@ -1551,7 +1551,7 @@
     "metaUsed": "5e3669a6ebb0151681f14b5d",
     "stockistId": "0000016160",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "P.S.DISTRIBUTORS P.S.DISTRIBUTORS \nPage 1 Of  1 \nStock Statment : ALKEM LAB.LTD-ALTIS \n",
     "uuid": "096e550d-9f15-4eee-8f44-100194e29523",
@@ -1692,13 +1692,6 @@
     "stockistId": "0000019674",
     "remark": "no date found"
 },
-{
-    "fileStr": "MINI INTERNATIONAL \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n31/03/2021 Page 1 of 1 \n",
-    "uuid": "d1c16cc1-65b1-4526-9e60-c8dfeb36c79b",
-    "metaUsed": "5e36248eebb0151681d6c1e1",
-    "stockistId": "0000002293",
-    "remark": "no date found"
-},//DateFound
 {
     "fileStr": "",
     "uuid": "4c0016e6-3159-4bac-9434-ba1b3941d6aa",
@@ -2895,7 +2888,7 @@
     "metaUsed": "5e11c7a2855cca326517ef99",
     "stockistId": "0000015651",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "06f71098-195d-4b8f-9426-66d88ec876fd",
@@ -2923,7 +2916,7 @@
     "metaUsed": "601922e7e7be06acebf03c8d",
     "stockistId": "0000000907",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SUBURBAN DISTRIBUTORS SUBURBAN DISTRIBUTORS \nPage 1 Of  2 \nStock Statment : ALKEM LABORATORIES(DIABETOLOY) \n",
     "uuid": "3a3432e6-bc5e-4bd8-9a6a-e8d367155c63",
@@ -2937,7 +2930,7 @@
     "metaUsed": "601a0ef3e7be06aceb16a331",
     "stockistId": "0000021043",
     "remark": "no date found"
-},//DateFound
+},
 {
     "fileStr": "",
     "uuid": "bf1114d4-9c02-42c8-a9f6-4d127541deac",
@@ -3008,20 +3001,6 @@
     "stockistId": "0000018194",
     "remark": "no date found"
 },
-{
-    "fileStr": "MAJELLA PHARMACEUTICAL DISTRIBUTORS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n01/04/2021 Page 1 of 2 \n",
-    "uuid": "5d236cbc-4e3a-4c57-9272-42f61aebec38",
-    "metaUsed": "5eac9fa484aba826becf094a",
-    "stockistId": "0000000988",
-    "remark": "no date found"
-},
-{
-    "fileStr": "MEDICARE PHARMA \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n01/04/2021 Page 1 of 10 \n",
-    "uuid": "571dc5b2-b50d-44b3-845c-4b1264c9ad8c",
-    "metaUsed": "5e362400ebb0151681d40b4e",
-    "stockistId": "0000001026",
-    "remark": "no date found"
-},//DateFound
 {
     "fileStr": "SD JAIN PHARMACEUTICALS PVT LTD \nPage No \nStock and Sales Report for * ALKAM \n",
     "uuid": "3cbf2936-0ebd-445e-b008-b4d25613d169",
@@ -3098,7 +3077,7 @@
     "metaUsed": "5e0d956b88cc5d165c872235",
     "stockistId": "0000001357",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "M.E. NAME - ALKEM ALPHA NEX - 2020-21 \nH.Q.- \nMONTH : \n",
     "uuid": "f66a68d3-32aa-4379-8b9c-24cbce345c24",
@@ -3160,13 +3139,6 @@
     "uuid": "d1834d30-db8f-40c8-8e50-cb31118fce65",
     "metaUsed": "5e38fd284927ac7489b47b9e",
     "stockistId": "0000002481",
-    "remark": "no date found"
-},
-{
-    "fileStr": "MEDIGLOBE \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n01/04/2021 Page 1 of 1 \nOpening Purchase Sales Free/Retn Closing Last \nmonth \nRate \n",
-    "uuid": "80eca792-f1e8-4fa7-b0de-157baed09f8c",
-    "metaUsed": "5e5e1c08310a5a3c668bda9a",
-    "stockistId": "0000002611",
     "remark": "no date found"
 },
 {
@@ -3238,7 +3210,7 @@
     "metaUsed": "6018ecd6e7be06acebd4da0a",
     "stockistId": "0000003442",
     "remark": "no date found"
-},//DateFound
+},
 {
     "fileStr": "K E S H R I D R U G A G E N C Y \nJ A M U N A C H O W K B U K A R P I N C O D E : 8 0 2 1 0 1 \nG S T N O . 1 0 A N E P K 2 9 7 5 R 2 Z L \nC O M P A N Y S T O C K S T A T E M E N T ( S R ) \nC o m p a n y : A L K E M L A B L T D . ( B E R G E N - N O V A ) G X \nF R O M 0 1 / 0 3 / 2 0 2 1 T O 3 1 / 0 3 / 2 0 2 1 \n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n",
     "uuid": "be0d5263-86b3-4ae1-a4db-4e3acc579c04",
@@ -3352,13 +3324,6 @@
     "remark": "no date found"
 },
 {
-    "fileStr": "VENKATESHWARA PHARMACEUTICALS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n31/03/2021 Page 1 of 1 \n",
-    "uuid": "2faee7d0-4174-4c7e-bf47-a4303765b7c8",
-    "metaUsed": "5e5de61ff9ca603c48fb4849",
-    "stockistId": "0000001820",
-    "remark": "no date found"
-},//DateFound
-{
     "fileStr": "",
     "uuid": "4a8627c4-50b0-4baa-a1f8-452faa95881f",
     "metaUsed": "605e299cacee348fdd9cc93f",
@@ -3378,7 +3343,7 @@
     "metaUsed": "5d0dc2d99f1a53583ff9d621",
     "stockistId": "0000003379",
     "remark": "no date found"
-},//special
+},
 {
     "fileStr": "",
     "uuid": "b449baee-0fa2-40c9-bd0b-a2166d734523",
@@ -3399,7 +3364,7 @@
     "metaUsed": "5f77bb096229af2f552554bd",
     "stockistId": "0000013042",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "361c1c63-90c3-43e2-b919-49018ea8e72e",
@@ -3427,7 +3392,7 @@
     "metaUsed": "5e11c7a2855cca326517ef99",
     "stockistId": "0000015651",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "29a612b7-bd3b-4de4-b0d9-63d1db33d258",
@@ -3441,7 +3406,7 @@
     "metaUsed": "601922e7e7be06acebf03c8d",
     "stockistId": "0000000907",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SRI SUDHARSAN AGENCIES-KUMBAKONAM                               ALKEM -BURGEON ASTA                               Page No : 1 \nSTOCK & SALES STATEMENT for The Month of Mar - 2021 \n",
     "uuid": "077edec6-095c-407d-8bb7-e11b50f3d87a",
@@ -3595,7 +3560,7 @@
     "metaUsed": "601a0eeee7be06aceb16a257",
     "stockistId": "0000010551",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "\u001bM  \n\u000e          PRAKASH PHARMA DISTRIBUTORS  \n                      4-1-11/A/4,LANE OPP:WESLEY CHURCH GATE,TILAK ROAD,   \n                                    RAMKOTE,HYDERABAD 500001  \n                                                  \n   \n                                  Stock and Sales For ALKEM (ACE-ALTIS)  \nbetween 3/1/2021 and 3/31/2021                                                   Page - 1  \n---------------------------------------------------------------------------------------------------------  \n",
     "uuid": "de4f7cbb-ada9-420f-8526-8521b17a0232",
@@ -3623,7 +3588,7 @@
     "metaUsed": "603bf4536e80fce7cdb847a1",
     "stockistId": "0000017969",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "46ea024a-b694-45bc-bf1f-55a39a140943",
@@ -4001,7 +3966,7 @@
     "metaUsed": "601a0eeee7be06aceb16a257",
     "stockistId": "0000010551",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "GALAXY ENTERPRISES. - HAMIRPUR \n02AGEPP8696F1Z4 \nBhota Road, \nHAMIRPUR \n177001 \nCOMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 COMPANY WISE SALE& STOCK From 01/03/2021 to 31/03/2021 \n",
     "uuid": "c3fcc46c-8be4-4deb-b487-f38636095aa6",
@@ -4015,7 +3980,7 @@
     "metaUsed": "5e0d956b88cc5d165c872235",
     "stockistId": "0000001357",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \n\u001b\u000fPrinted: 01/04/2021                                                                                                     Page: 1  \n                                          \u001bW1GREEN VALLEY DRUG DISTRIBUTOR\u001bW0  \n                                                          RLY HOSPITAL ROAD  \n                                                               LUMDING  \n                                                                ASSAM  \n  \n                                            STOCK STATEMENT: FROM 01/03/2021 TO 31/03/2021  \n  \nCompany listed: ,ALKEM LABORATORIES LIMITED,ALKEM LABORATORIES LIMITED.,  \n=================================================================================================================================  \n",
     "uuid": "efa204db-0817-47eb-90be-7b1f4ac0dc76",
@@ -4106,7 +4071,7 @@
     "metaUsed": "603e0b2d5c0230e7eb536ff5",
     "stockistId": "0000019319",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "SHUBH DRUG AGENCY - MOTIHARI \n10APRPP0885J1ZJ \n",
     "uuid": "7e95436c-50b5-43f9-ba40-610486009d41",
@@ -4134,7 +4099,7 @@
     "metaUsed": "601a0ef3e7be06aceb16a331",
     "stockistId": "0000021043",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "KAPOOR MEDICINES \n9, Rastogi market, AYODHYA \nStock stmt Alkem Imperi101 Mar \n",
     "uuid": "b9590448-5657-4610-bfa2-d92433d64961",
@@ -4267,7 +4232,7 @@
     "metaUsed": "5e6085f3318ca0206671a233",
     "stockistId": "0000017161",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "6ab744b4-25bc-46f9-8790-7e37dcab5a59",
@@ -4365,7 +4330,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "c6787797-7afb-4c0d-8f0d-eaa098a2af14",
@@ -4400,7 +4365,7 @@
     "metaUsed": "5f26216afca94dd0c1bfe503",
     "stockistId": "0000013454",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "AGRAWAL TRADERS  AGENCIES \n10ACSPA3471D2Z4 \n800004 \n",
     "uuid": "c0068182-ca68-417e-88d0-833bda78a1ca",
@@ -4449,7 +4414,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "ef12cc1e-4f74-4c79-906d-4b7780c76d9a",
@@ -4687,7 +4652,7 @@
     "metaUsed": "5dbead3674da7d0f4b4fdf5d",
     "stockistId": "0000014223",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "D.JAMNADAS & CO (MALAD) D.JAMNADAS & CO (MALAD) \nPage 1 Of  3 \nStock Statment : ALKEM LABORATORIES-ALPHA DIVI \n",
     "uuid": "208a1102-3f75-48f7-9b75-b72db5996318",
@@ -4715,7 +4680,7 @@
     "metaUsed": "5fa2566d039ca9f3306e02ec",
     "stockistId": "0000001318",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "RADHASWAMY MEDICAL AGENCIES  \nFrom : 01/03/2021                                    STOCK AND SALES STATEMENT                                  Date    : 01/04/2021 \nTo   : 31/03/2021                                                                                               Time    : 17:42:03 \nCompany Name : ALKEM DIABETOLOGY                                                                               Page No :   1 \n____________________________________________________________________________________________________________________________________ \nCode    Product Name        Packing  Opening  Receipts Sales    Total  Purchase  Closing   Closing  Sales     Sales  1st      2nd \n",
     "uuid": "8e6cd2c0-aeeb-49c3-9ec9-23390c05f3a6",
@@ -4764,7 +4729,7 @@
     "metaUsed": "5eb5b348d0c8b4329e7c355e",
     "stockistId": "0000014223",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \n                          GEETA AGENCIES  \n                            3881,PRABHU AANGAN APPT.  \n                          JUNA BAZAR,AHMEDNAGAR-414001  \n                    TEL=-241-2346672 / 2325884  / 9422221261  \n                           Stock and Sales Statement  \n                              Company : ALKEM-ACE  \n                            01/03/2021 to 31/03/2021  \n                                                                      Page No. 1  \n                             From :01/03/2021 To :31/03/2021  \n-----------------------------------------------------------------------------------------  \n",
     "uuid": "9a7c2157-4ce6-4871-9584-e48ff7b8b7af",
@@ -4856,13 +4821,6 @@
     "stockistId": "0000019972",
     "remark": "no date found"
 },
-{
-    "fileStr": "NAGAKRUPA DISTRIBUTORS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n01/04/2021 Page 1 of 7 \n",
-    "uuid": "73a266ed-199d-4a17-bfc5-3617a4fee5a0",
-    "metaUsed": "5e34899b96bb8b4cb0ae2b3d",
-    "stockistId": "0000007098",
-    "remark": "no date found"
-},//dateFound
 {
     "fileStr": "",
     "uuid": "e21e75c4-a0a4-4da9-9779-26d7b442abd0",
@@ -4995,21 +4953,21 @@
     "metaUsed": "5e3d2600d2e2d950ccce1886",
     "stockistId": "0000011832",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "FOCUS MEDISALES PVT. LTD. \n#1 (OLD #44)MAS COMPLEX,6TH CROSS WILSON GARDEN,HOSUR ROAD,BENGALURU-560027 \nSTOCK AND SALES (CONSOLIDATED) \nFrom  01-Mar-2021  To 31-Mar-2021 (Sale Report Updated Till : 30-Mar-2021) \nCompany:ALKEM (PENTACARE) \nAddress:#76/10, 3RD MAIN, IND.TOWN,RAJAJI NAGAR, BANGALORE-560044 \n",
     "uuid": "1494b3cf-e092-4c5b-b98e-c3eba76c8b20",
     "metaUsed": "603bf4536e80fce7cdb847a1",
     "stockistId": "0000017969",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SRINIVASA MEDISALES PVT. LTD. \n#40, K.H.CIRCLE, DOUBLE ROAD BENGALURE-560027 \nSTOCK AND SALES \nFrom  01-Mar-2021  To 31-Mar-2021 (Sale Report Updated Till : 31-Mar-2021) \nCompany:ALKEM (PENTACARE / PRIZMA) \nAddress: \n",
     "uuid": "29f3d63b-44c5-42e7-bc59-005ea2ac494b",
     "metaUsed": "601a0eeee7be06aceb16a257",
     "stockistId": "0000010551",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SUBURBAN DISTRIBUTORS SUBURBAN DISTRIBUTORS \nPage 1 Of  2 \nStock Statment : ALKEM LABORATORIES(NOVA) \n",
     "uuid": "847bc371-c38e-4c11-a615-9eba35e7e792",
@@ -5030,7 +4988,7 @@
     "metaUsed": "5f26216afca94dd0c1bfe503",
     "stockistId": "0000013454",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "ARPIT PHARMA ARPIT PHARMA \nPage 1 Of  1 \nStock Statment : ALKEM BERGEN NOVA DIVISOIN \n",
     "uuid": "35ef8adf-e1de-4651-b164-aea2e0820367",
@@ -5170,7 +5128,7 @@
     "metaUsed": "5f002ebf6a059915e7be2f86",
     "stockistId": "0000012552",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "Sanjivani Agency \nManik Chowk \nAhmednagar \nPhone 0241-2346816 \n",
     "uuid": "ad0b9630-7027-479d-ac81-f2c8f23fc297",
@@ -5205,7 +5163,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SRI AMBAL JAISREE MEDICALS-TRICHY                               ALKEM DERMACARE                               Page No : 1 \nSTOCK & SALES STATEMENT for The Month of Mar - 2021 \n",
     "uuid": "d3e33e67-594a-4dbd-a8c0-801784d64e67",
@@ -5331,7 +5289,7 @@
     "metaUsed": "5dc02aa9a645e16094a84540",
     "stockistId": "0000018503",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "45b2f9bc-c02f-4a85-b960-acb3a475af82",
@@ -5436,7 +5394,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": " \nD S V & Sons, \nShri Saradhaa Complex, \n18, Kandappa Street, \nErode - 638001 \nWebsite: www.srisaradha.in \n",
     "uuid": "e922ff5f-03f0-44cf-9009-5685103a499f",
@@ -5632,7 +5590,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "MIDAS INDIA \nNew No:22, Old No:2/1, 4th Cross Street, Dhandeeswaram Nagar, Velachery Chennai - 600042 \nStock And Sales Report(Month) 03/2021 \nOpening Purchase Sale NetStock \n",
     "uuid": "e68ca4fc-d5e8-4779-81c6-e5df21aa6ec5",
@@ -5849,7 +5807,7 @@
     "metaUsed": "5ed70ae1f080c91841472898",
     "stockistId": "0000001124",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "c02b6de1-b9b3-4dc8-90d4-c8abf20ae34b",
@@ -5940,7 +5898,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SHREE SAINATH MEDICALS  \nStock & Sales Report for the month MARCH - 2021 for : ALKEM LABORATORIES LTD. (DIV.: ALPHA)  Page :  1  \n \n \n",
     "uuid": "a0110594-b248-4671-abf3-03112a2ded2b",
@@ -6325,7 +6283,7 @@
     "metaUsed": "5d011f5f5645152b2deacb37",
     "stockistId": "0000001275",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "cf4f8a99-485a-4a2c-9a6b-ad406aa1d6c5",
@@ -6577,14 +6535,14 @@
     "metaUsed": "603bf4536e80fce7cdb847a1",
     "stockistId": "0000017969",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "SRINIVASA MEDISALES PVT. LTD. \n#40, K.H.CIRCLE, DOUBLE ROAD BENGALURE-560027 \nSTOCK AND SALES \nFrom  01-Mar-2021  To 31-Mar-2021 (Sale Report Updated Till : 01-Apr-2021) \nCompany:ALKEM (IMPERIA) \nAddress:NO.75, 1ST FLOOR.,GAYATRI MILL COMPLEX, MAGADI MAIN ROAD \n",
     "uuid": "fba654d6-62fc-4e5b-a5db-dac1327efb9f",
     "metaUsed": "601a0eeee7be06aceb16a257",
     "stockistId": "0000010551",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \n             YASH DISTRIBUTORS PVT. LTD.  \n                       SADGURU BABA BHALCHANDRA APARTMENT  \n                      ACHARA ROAD MASURKAR KINAI  KANKAVLI  \n                       A/P KANKAVALI. PH NO 02367-230421  \n                           Stock and Sales Statement  \n                      Company : ALKEM MEDIVA -DIABETOLOGY  \n                            01/03/2021 to 31/03/2021  \n                                                                      Page No. 1  \n                             From :01/03/2021 To :31/03/2021  \n-----------------------------------------------------------------------------------------  \n",
     "uuid": "0e27110e-6184-438b-a8c5-c57d6e26c7ed",
@@ -6633,7 +6591,7 @@
     "metaUsed": "5f26216afca94dd0c1bfe503",
     "stockistId": "0000013454",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "",
     "uuid": "21826153-0ec7-456f-a198-03e4c3d7a905",
@@ -6647,7 +6605,7 @@
     "metaUsed": "60190af5b4cd64ad091dc125",
     "stockistId": "0000000991",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "ARPIT PHARMA ARPIT PHARMA \nPage 1 Of  2 \nStock Statment : ALKEM(ARISE)LTD \n",
     "uuid": "c8307d25-f724-4ab8-8e25-e39ffa5124ab",
@@ -6675,7 +6633,7 @@
     "metaUsed": "5e11c7a2855cca326517ef99",
     "stockistId": "0000015651",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": " Sri Lakshmi Medical Syndicate  \n \n SHOPE NO. G 13, KOTHAPET  \n   \n \nGSTN :  37AAIFS1963Q1ZE    \n     \n       \n Stock &  Sales 01/Mar /21  To  31/Mar /21  \n  \n       \n Opening value  21,938.78   \n    \n Purchase  \n     \n Sales  5,294.95  \n     \n",
     "uuid": "c5363ed9-2e5a-4e98-a063-7c93d44535f3",
@@ -6759,7 +6717,7 @@
     "metaUsed": "5e11c7a2855cca326517ef99",
     "stockistId": "0000015651",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "f1ef4f37-d37c-4897-9f4c-125919180187",
@@ -6780,14 +6738,14 @@
     "metaUsed": "603e0b2d5c0230e7eb536ff5",
     "stockistId": "0000019319",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \n\u000ePADMAVATHI MEDICAL AGENCIES  \nSai Complex,Main Road,MANCHERIAL - 504 208  \n  \nMONTHLY STOCK & SALES STATEMENT FOR THE MONTH OF March '21  \n  \n\u0012  \nCOMPANY NAME :\u000eALKEM LAB LTD (UROCARE) DIV     \n\u000f  \nFROM :01/03/2021  TO  31/03/2021                                        TIME :14:44:17     DATE :31/03/2021  \n============================================================================================================================  \n",
     "uuid": "d32810d3-ba00-4e62-af88-b9be38f290f8",
     "metaUsed": "5d3702f8fc88d93cb33c68a0",
     "stockistId": "0000002468",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "8ad32f92-397e-4ca2-9a81-5436d94b354e",
@@ -6822,7 +6780,7 @@
     "metaUsed": "6067c6e84131450ec71edfa4",
     "stockistId": "0000013129",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": " \n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \nOrder3 \n \n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \n",
     "uuid": "ae0443f3-e731-4856-82b9-d8bb2e02e0ff",
@@ -7165,7 +7123,7 @@
     "metaUsed": "601922e7e7be06acebf03c8d",
     "stockistId": "0000000907",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "SHRI JAYANTHI ENTERPRISES \nPage No \nStock and Sales Report for ALKEM LABORATORIES LTD (ARISE) \n",
     "uuid": "e7ce9b23-ca6e-4400-86e5-57c35df45753",
@@ -7208,13 +7166,6 @@
     "stockistId": "0000020945",
     "remark": "no date found"
 },
-{
-    "fileStr": "LAKSHMI MEDICAL DISTRIBUTORS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n02/04/2021 Page 1 of 1 \n",
-    "uuid": "aa6b144d-d631-4afb-a5b1-a6a72843afd0",
-    "metaUsed": "5eac9fa784aba826becf0957",
-    "stockistId": "0000000479",
-    "remark": "no date found"
-},//dateFound
 {
     "fileStr": "NAYAN PHARMACEUTICAL AGENCIES, BERHAMPUR \nProduct \n",
     "uuid": "09d89069-2a1e-442d-a1c8-de393d9e7c65",
@@ -7277,7 +7228,7 @@
     "metaUsed": "5dbeac3774da7d0f4b4fd3ac",
     "stockistId": "0000006206",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "  \nDEEPAK MEDICAL AGENCIES.  \n  \nStock And Sales Statement  \nMARCH, 2021 Comp: ALKEM LAB LIMITED ()                                            \n",
     "uuid": "6c4c5ec1-d090-428e-bd39-03232eb1209a",
@@ -7319,7 +7270,7 @@
     "metaUsed": "603f0edd6e80fce7cd4032b2",
     "stockistId": "0000013455",
     "remark": "no date found"
-},//dateFound above
+},
 {
     "fileStr": "Stockist Name VIJAY PHARMACEUTICAL \nGst No 33AAEFV2611C1ZT \nHQ Name COIMBATORE \nDepo Name ALKEM CHENNAI \n",
     "uuid": "4f8ec0f2-3815-4359-9074-65675f4e1a20",
@@ -7557,7 +7508,7 @@
     "metaUsed": "5e8e2633e629fb07576a7a05",
     "stockistId": "0000001546",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "8ceac9d7-fc5d-461b-b4f8-9befb2b45569",
@@ -7627,7 +7578,7 @@
     "metaUsed": "5d011f5f5645152b2deacb37",
     "stockistId": "0000001275",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "Stockist Name Sri ram medical agencies \nGST Number 37AAEFS4416L1ZY \nHQ Name Vizag \nDepo Name Hyderabad \n",
     "uuid": "5550f385-fd93-4b63-bf02-94fa80c40e70",
@@ -7683,7 +7634,7 @@
     "metaUsed": "5d011f5f5645152b2deacb37",
     "stockistId": "0000001275",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "8e32a4f6-897e-4482-b26c-7782f5710e56",
@@ -7879,7 +7830,7 @@
     "metaUsed": "5d011f5f5645152b2deacb37",
     "stockistId": "0000001275",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "",
     "uuid": "d847aec0-3b95-4c8b-9fa9-2140269d2484",
@@ -8042,13 +7993,6 @@
     "remark": "no date found"
 },
 {
-    "fileStr": "MAJELLA PHARMACEUTICAL DISTRIBUTORS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n01/04/2021 Page 1 of 1 \n",
-    "uuid": "063015c1-072c-422d-aa97-85c5cea14e37",
-    "metaUsed": "5eac9fa484aba826becf094a",
-    "stockistId": "0000000988",
-    "remark": "no date found"
-},//dateFound
-{
     "fileStr": " \n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \nOrder3 \n \n0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \n",
     "uuid": "a25e30ff-b363-4c7e-8268-33612444224c",
     "metaUsed": "5e0dd2d3ddea597c2c379498",
@@ -8187,7 +8131,7 @@
     "metaUsed": "601a0ef2e7be06aceb16a308",
     "stockistId": "0000020866",
     "remark": "no date found"
-},//dateFound
+},
 {
     "fileStr": "Stockist Name SHREYAS DISTRIBUTORS \nGST Number 27ACAPA19981Z0 \nHQ Name PUNE \nDepo Name PUNE \n",
     "uuid": "31939b14-2268-4479-b28d-f5f1cd96837a",
@@ -8573,13 +8517,6 @@
     "stockistId": "0000013738",
     "remark": "no date found"
 },
-{
-    "fileStr": "BETA AGENCIES & PROJECTS PVT. LTD., \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n31/03/2021 Page 1 of 5 \n",
-    "uuid": "c9c17ea5-f496-4bac-857f-68fbafffda4d",
-    "metaUsed": "606901b9eaa2ab8c9ecc4edf",
-    "stockistId": "0000000295",
-    "remark": "no date found"
-},//dateFound
 {
     "fileStr": "NAYAK DISTRIBUTORS, MANGALORE \nStock Statement for March, \n",
     "uuid": "f6c2bbe3-c891-4a58-81ec-82395b42098c",
@@ -14636,13 +14573,6 @@
     "remark": "no date found"
 },
 {
-    "fileStr": "NEW JAIN PHARMA DISTRIBUTORS \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n05/04/2021 Page 1 of 3 \n",
-    "uuid": "021c443c-fb47-496a-9da2-8565605e70fa",
-    "metaUsed": "604863529ce42b1e0f94e319",
-    "stockistId": "0000020908",
-    "remark": "no date found"
-},
-{
     "fileStr": "S  T  O  C  K  S  T  A  T  E  M  E  N  T \nKARACHI  MEDICAL  AGENCY  \nTO  :  ALKEM  ALTIS  DIV  \n2Nd/3Rd Floor Meghraj Mansion Ahilyabai Chowk  \nOpp Gujarathi Gandhi School  \nKalyan Kalyan - 421301 (Maharashtra)  - 0 \n2200624/8976814567 Mobile : 8655433556 Mobile : 0 \nWeb Site : \nEmail : ashish54pandey@gmail.com \nEmail : karachi.m.a@gmail.com \nDLNo. : 20B -TZ-2- 25232 21B -TZ-2- 25233 20D -TZ -2- 25234 DLNo. : \nGSTIN :    27AABFK2605E1ZU  GS TIN : \nFSSAI No. : 11517021000384 \n",
     "uuid": "c9d86eaf-bc97-4bac-96c9-b847afcf9b6b",
     "metaUsed": "606c205226750e5c97a74b04",
@@ -16362,13 +16292,6 @@
     "uuid": "f51420f1-8baf-4bdb-ba0d-76e8d98d61d3",
     "metaUsed": "601b43fde7be06aceb4b2f6c",
     "stockistId": "0000005179",
-    "remark": "no date found"
-},
-{
-    "fileStr": "Nagendra Drug Agencies \nStock Statement From  01/03/2021 To 31/03/2021 \nDate: \n05/04/2021 Page 1 of 1 \n",
-    "uuid": "759fb6fe-936b-44b4-8967-1cd354f16739",
-    "metaUsed": "606cb90f1283b47ea8e945ad",
-    "stockistId": "0000001875",
     "remark": "no date found"
 },
 {
