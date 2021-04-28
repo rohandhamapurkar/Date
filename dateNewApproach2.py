@@ -62,18 +62,14 @@ def dateExt(text, fileuuid, meta, stkid):
                     lstdate.append(date1)
                 except ValueError:
                     pass
-        print(lstdate)
         for i in lstdate:
-            print("debu")
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
                 pattList_multiple.append(i)
-                print(pattList_multiple,"mul")
         if len(pattList_multiple)==2:
             res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
         elif len(pattList_multiple)==1:
             finalList.append(pattList_multiple)
-            print("final",finalList)
     elif len(match)==1:
         #again search for 01-jan
         #\n or \S
@@ -81,7 +77,6 @@ def dateExt(text, fileuuid, meta, stkid):
         tup1='/'.join(tup1)
         pattern1_2=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[\s][- \/.,](\d{4}|\d{2})'
         match1_2 = re.findall(pattern1_2,finalText)
-        print(match1_2)
         #31-jan -21
         if match1_2:
             tup2=match1_2[0]
@@ -120,7 +115,6 @@ def dateExt(text, fileuuid, meta, stkid):
     #jan 01, 2021 to :- jan 31, 2021
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
-    print(match5,"m5")
     if len(match5) == 2:
         tup1=match5[0]   #1st tuple from match list
         tup2=match5[1]   #2nd tuple from match list
@@ -177,7 +171,6 @@ def dateExt(text, fileuuid, meta, stkid):
     #(?<!\S)
     pattern2=r"\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,'](\d{4}|\d{2})\b"
     match2 = re.findall(pattern2,finalText)
-    print(match2,"m2")
     if len(match2)==2:
         tup1=match2[0]
         tup2=match2[1]
@@ -232,16 +225,13 @@ def dateExt(text, fileuuid, meta, stkid):
                     pass
         print(lstdate)
         for i in lstdate:
-            print("debu")
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
                 pattList_multiple.append(i)
-                print(pattList_multiple,"mul")
         if len(pattList_multiple)==2:
             res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
         elif len(pattList_multiple)==1:
             finalList.append(pattList_multiple)
-            print("final",finalList)
 
     elif len(match2)==1:
         tup1=match2[0]
@@ -296,7 +286,6 @@ def dateExt(text, fileuuid, meta, stkid):
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
                 pattList_multiple.append(i)
-                print(pattList_multiple,"mul")
         if len(pattList_multiple)==2:
             res=dateComp(pattList_multiple[0],pattList_multiple[1],text,stkid,fileuuid)
         elif len(pattList_multiple)==1:
@@ -324,7 +313,6 @@ def dateExt(text, fileuuid, meta, stkid):
     #matching with 4th pattern
     pattern4=r"(?<!\S)(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(\d{4}|\d{2})\b"
     match4 = re.findall(pattern4,finalText)
-    print(match4,"match4")
     if len(match4)==2:
         tup1=match4[0]
         tup2=match4[1]
@@ -450,10 +438,10 @@ try:
                         outfile.write(',\n')
             else:
                 finalText_end=''
-                jsonstr=jsonstr.replace("Date :\n","Date:")
-                jsonstr=jsonstr.replace("Date:\n","Date:")
-                jsonstr=jsonstr.replace("Date: \n","Date:")
-                for line in jsonstr.splitlines():
+                jsonstr_end=jsonstr.replace("Date :\n","Date:")
+                jsonstr_end=jsonstr.replace("Date:\n","Date:")
+                jsonstr_end=jsonstr.replace("Date: \n","Date:")
+                for line in jsonstr_end.splitlines():
                     if not "Date:" in line and not "Date :" in line:
                         finalText_end=finalText_end+"\n"+line
                 jsonstr3=finalText_end
@@ -469,6 +457,19 @@ try:
                         with open("dateJsonOutput2.json", "a+") as outfile: 
                             json.dump(json_data, outfile, indent=4)
                             outfile.write(',\n')
+                # stripped = jsonstr.split("Report Updated Till", 1)[0]
+                # tp4=dateExt(stripped,jsonuuid,jsonmeta,jsonstkid)
+                # if tp4:
+                #     if len(tp4)==2:
+                #         json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"end_date":str(tp4[1]),"stockistId":jsonstkid}
+                #         with open("dateJsonOutput2.json", "a+") as outfile: 
+                #             json.dump(json_data, outfile, indent=4)
+                #             outfile.write(',\n')
+                #     elif len(tp4)==1:
+                #         json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"stockistId":jsonstkid}
+                #         with open("dateJsonOutput2.json", "a+") as outfile: 
+                #             json.dump(json_data, outfile, indent=4)
+                #             outfile.write(',\n') 
                 else:
                     remark="no date found"
                     json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
