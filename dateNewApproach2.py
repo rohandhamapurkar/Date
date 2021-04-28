@@ -457,26 +457,27 @@ try:
                         with open("dateJsonOutput2.json", "a+") as outfile: 
                             json.dump(json_data, outfile, indent=4)
                             outfile.write(',\n')
-                # stripped = jsonstr.split("Report Updated Till", 1)[0]
-                # tp4=dateExt(stripped,jsonuuid,jsonmeta,jsonstkid)
-                # if tp4:
-                #     if len(tp4)==2:
-                #         json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"end_date":str(tp4[1]),"stockistId":jsonstkid}
-                #         with open("dateJsonOutput2.json", "a+") as outfile: 
-                #             json.dump(json_data, outfile, indent=4)
-                #             outfile.write(',\n')
-                #     elif len(tp4)==1:
-                #         json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"stockistId":jsonstkid}
-                #         with open("dateJsonOutput2.json", "a+") as outfile: 
-                #             json.dump(json_data, outfile, indent=4)
-                #             outfile.write(',\n') 
                 else:
-                    remark="no date found"
-                    json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                    with open("dateNotFound2.json", "a+") as outfile: 
-                        json.dump(json_data, outfile, indent=4)
-                        outfile.write(',\n')
-                    print(remark,jsonuuid,jsonstr)
+                    stripped = jsonstr.split("Report Updated Till", 1)[0]
+                    tp4=dateExt(stripped,jsonuuid,jsonmeta,jsonstkid)
+                    if tp4:
+                        if len(tp4)==2:
+                            json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"end_date":str(tp4[1]),"stockistId":jsonstkid}
+                            with open("dateJsonOutput2.json", "a+") as outfile: 
+                                json.dump(json_data, outfile, indent=4)
+                                outfile.write(',\n')
+                        elif len(tp4)==1:
+                            json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp4[0]),"stockistId":jsonstkid}
+                            with open("dateJsonOutput2.json", "a+") as outfile: 
+                                json.dump(json_data, outfile, indent=4)
+                                outfile.write(',\n') 
+                    else:
+                        remark="no date found"
+                        json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
+                        with open("dateNotFound2.json", "a+") as outfile: 
+                            json.dump(json_data, outfile, indent=4)
+                            outfile.write(',\n')
+                        print(remark,jsonuuid,jsonstr)
 except UnicodeEncodeError:
     pass
 #todo date:\n to date:
