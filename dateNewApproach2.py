@@ -406,6 +406,7 @@ try:
         jsonuuid=item['uuid']
         jsonmeta=item['metaUsed']['$oid']
         jsonstkid=item['stockistId']
+        jsonstr=jsonstr.lower()
         jsonstr1=jsonstr.splitlines()[1:]
         jsonstr1="\n".join(x for x in jsonstr1)
         jsonstr2=jsonstr.splitlines()[:1]
@@ -438,11 +439,11 @@ try:
                         outfile.write(',\n')
             else:
                 finalText_end=''
-                jsonstr_end=jsonstr.replace("Date :\n","Date:")
-                jsonstr_end=jsonstr.replace("Date:\n","Date:")
-                jsonstr_end=jsonstr.replace("Date: \n","Date:")
+                jsonstr_end=jsonstr.replace("date :\n","date:")
+                jsonstr_end=jsonstr.replace("date:\n","date:")
+                jsonstr_end=jsonstr.replace("date: \n","date:")
                 for line in jsonstr_end.splitlines():
-                    if not "Date:" in line and not "Date :" in line:
+                    if not "date:" in line and not "date :" in line:
                         finalText_end=finalText_end+"\n"+line
                 jsonstr3=finalText_end
                 tp3=dateExt(jsonstr3,jsonuuid,jsonmeta,jsonstkid)
@@ -458,7 +459,7 @@ try:
                             json.dump(json_data, outfile, indent=4)
                             outfile.write(',\n')
                 else:
-                    stripped = jsonstr.split("Report Updated Till", 1)[0]
+                    stripped = jsonstr.split("report updated till", 1)[0]
                     tp4=dateExt(stripped,jsonuuid,jsonmeta,jsonstkid)
                     if tp4:
                         if len(tp4)==2:
@@ -472,12 +473,26 @@ try:
                                 json.dump(json_data, outfile, indent=4)
                                 outfile.write(',\n') 
                     else:
-                        remark="no date found"
-                        json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
-                        with open("dateNotFound2.json", "a+") as outfile: 
-                            json.dump(json_data, outfile, indent=4)
-                            outfile.write(',\n')
-                        print(remark,jsonuuid,jsonstr)
+                        stripped2 = jsonstr.split("date :", 1)[0]
+                        tp5=dateExt(stripped2,jsonuuid,jsonmeta,jsonstkid)
+                        if tp5:
+                            if len(tp5)==2:
+                                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp5[0]),"end_date":str(tp5[1]),"stockistId":jsonstkid}
+                                with open("dateJsonOutput2.json", "a+") as outfile: 
+                                    json.dump(json_data, outfile, indent=4)
+                                    outfile.write(',\n')
+                            elif len(tp5)==1:
+                                json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"start_date":str(tp5[0]),"stockistId":jsonstkid}
+                                with open("dateJsonOutput2.json", "a+") as outfile: 
+                                    json.dump(json_data, outfile, indent=4)
+                                    outfile.write(',\n') 
+                        else:
+                            remark="no date found"
+                            json_data={"fileStr":jsonstr, "uuid":jsonuuid,"metaUsed":jsonmeta,"stockistId":jsonstkid,"remark":remark}
+                            with open("dateNotFound2.json", "a+") as outfile: 
+                                json.dump(json_data, outfile, indent=4)
+                                outfile.write(',\n')
+                            print(remark,jsonuuid,jsonstr)
 except UnicodeEncodeError:
     pass
 #todo date:\n to date:
