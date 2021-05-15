@@ -22,7 +22,6 @@ def dateExt(text):
             dateList=[start_date]
             return dateList
     finalText=''
-    text=text.lower()
     prefinalText=''
     for line in text.splitlines():
         if not "generated" in line and not "report date" in line and not "date/time" in line and not "run date" in line and not "print date" in line and not "valid upto" in line and not "data uploaded" in line and not "dl1:" in line and not "dl2:" in line and not "download" in line and not "d.no:" in line and not "licence no." in line and not "sh.no." in line: #licence no.   d.no:  SH.NO.
@@ -83,7 +82,6 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
-                    remark="matching with 2dates and dd/mm/yyyy and dd/mm pattern"
                     res=dateComp(date1,date2)
                     #finalList.append(res)
                 except ValueError:
@@ -472,7 +470,3 @@ else:
                 else:
                     json_data={"start_date":"","end_date":""}
                     print(json.dumps(json_data))
-#todo date:\n to date:
-#{"startDate":"data","endDate":"data2"},
-
-#python3 script.py "str"
