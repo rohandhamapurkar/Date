@@ -30,7 +30,6 @@ def dateExt(text):
     finalText=re.sub(' +',' ',prefinalText)
     pattern1=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.](0?[1-9]|1[0-2]|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.](\d{4}|\d{2})\b' #remove w+ and match only motnths
     match = re.findall(pattern1,finalText)
-    print(match)
     res=[]
     match1_2=[]
     if len(match)==2:
@@ -42,6 +41,8 @@ def dateExt(text):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
+                date1=date1.isoformat()
+                date2=date2.isoformat()
                 remark="matching with 2dates and dd/mm/yyyy pattern"
                 res=dateComp(date1,date2)
                 #finalList.append(res)
@@ -399,9 +400,7 @@ tp1=dateExt(jsonstr1)
 if tp1:
     if len(tp1)==2:
         json_data={"start_date":str(tp1[0]),"end_date":str(tp1[1])}
-        with open("dateJsonOutput2.json", "a+") as outfile: 
-            json.dump(json_data, outfile, indent=4)
-            outfile.write(',\n')
+        print(json.dumps(json_data))
     elif len(tp1)==1:
         print("tp1 len 1",tp1)
         json_data={"start_date":str(tp1[0])}
@@ -471,12 +470,8 @@ else:
                             json.dump(json_data, outfile, indent=4)
                             outfile.write(',\n') 
                 else:
-                    remark="no date found"
-                    json_data={"remark":remark}
-                    with open("dateNotFound2.json", "a+") as outfile: 
-                        json.dump(json_data, outfile, indent=4)
-                        outfile.write(',\n')
-print("Str^^^^^^^^^^^^",sys.argv[1])
+                    json_data={"start_date":"","end_date":""}
+                    print(json.dumps(json_data))
 #todo date:\n to date:
 #{"startDate":"data","endDate":"data2"},
 
