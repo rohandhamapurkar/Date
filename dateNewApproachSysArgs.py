@@ -67,7 +67,6 @@ def dateExt(text):
             finalList.append(pattList_multiple)
     elif len(match)==1:
         #again search for 01-jan
-        #\n or \S
         tup1=match[0]
         tup1='/'.join(tup1)
         pattern1_2=r'\b(0?[1-9]|[12][0-9]|3[01])[- \/.,](jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[\s][- \/.,](\d{4}|\d{2})'
