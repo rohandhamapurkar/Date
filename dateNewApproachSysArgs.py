@@ -1,7 +1,6 @@
-import json #optional
+import json
 import re
 from datetime import date, datetime
-import os   #optional
 import sys 
 
 def dateExt(text):
@@ -32,9 +31,9 @@ def dateExt(text):
     res=[]
     match1_2=[]
     if len(match)==2:
-        tup1=match[0]   #1st tuple from match list
-        tup2=match[1]   #2nd tuple from match list
-        tup1='/'.join(tup1) #converting to string by "/"
+        tup1=match[0]
+        tup2=match[1]
+        tup1='/'.join(tup1)
         tup2='/'.join(tup2)
         for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
             try:
@@ -42,9 +41,7 @@ def dateExt(text):
                 date2 = datetime.strptime(tup2, frmt)
                 date1=date1.isoformat()
                 date2=date2.isoformat()
-                remark="matching with 2dates and dd/mm/yyyy pattern"
                 res=dateComp(date1,date2)
-                #finalList.append(res)
             except ValueError:
                 pass
     elif len(match)>2:
@@ -56,6 +53,7 @@ def dateExt(text):
             for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
                 try:
                     date1 = datetime.strptime(tup, frmt)
+                    date1=date1.isoformat()
                     lstdate.append(date1)
                 except ValueError:
                     pass
@@ -82,15 +80,16 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
+                    date1=date1.isoformat()
+                    date2=date2.isoformat()
                     res=dateComp(date1,date2)
-                    #finalList.append(res)
                 except ValueError:
-                    pass
-                    
+                    pass         
         else:
             for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y"):
                 try:
                     date_one = datetime.strptime(tup1, frmt)
+                    date_one=date_one.isoformat()
                     patt1List=[date_one]
                     finalList.append(patt1List)
                 except ValueError:
@@ -98,7 +97,6 @@ def dateExt(text):
     if len(match)==2:
         if len(res)>0:
             return res
-
     if len(match1_2)==1:
         if len(res)>0:
             return res
@@ -110,14 +108,16 @@ def dateExt(text):
     pattern5=r'\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[- \/.,](0?[1-9]|[12][0-9]|3[01])[- \/.,][- \/.,](\d{4}|\d{2})\b'
     match5 = re.findall(pattern5,finalText)
     if len(match5) == 2:
-        tup1=match5[0]   #1st tuple from match list
-        tup2=match5[1]   #2nd tuple from match list
-        tup1='/'.join(tup1) #converting to string by "/"
+        tup1=match5[0]   
+        tup2=match5[1] 
+        tup1='/'.join(tup1) 
         tup2='/'.join(tup2)
         for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
+                date1=date1.isoformat()
+                date2=date2.isoformat()
                 res=dateComp(date1,date2)
             except ValueError:
                 pass
@@ -130,6 +130,7 @@ def dateExt(text):
             for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
                 try:
                     date1 = datetime.strptime(tup, frmt)
+                    date1=date1.isoformat()
                     lstdate.append(date1)
                 except ValueError:
                     pass
@@ -137,17 +138,17 @@ def dateExt(text):
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
                 pattList_multiple.append(i)
-                print(pattList_multiple,"mul")
         if len(pattList_multiple)==2:
             res=dateComp(pattList_multiple[0],pattList_multiple[1])
         elif len(pattList_multiple)==1:
             finalList.append(pattList_multiple)
     elif len(match5)==1:
-        tup1=match5[0]   #1st tuple from match list
+        tup1=match5[0] 
         tup1='/'.join(tup1)
         for frmt in ("%m/%d/%y","%m/%d/%Y","%B/%d/%Y","%b/%d/%Y","%B/%d/%y","%b/%d/%y"):
             try:
                 date_one = datetime.strptime(tup1, frmt)
+                date_one=date_one.isoformat()
                 patt5List=[date_one]
                 finalList.append(patt5List)
             except ValueError:
@@ -155,7 +156,6 @@ def dateExt(text):
     if len(match5)==2:
         if len(res)>0:
             return res
-
     if len(match5)>2:
         if len(res)>0:
             return res
@@ -188,7 +188,8 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
-                    remark="matching with 2dates and mm/yyyy pattern"
+                    date1=date1.isoformat()
+                    date2=date2.isoformat()
                     res=dateComp(date1,date2)
                 except ValueError:
                     pass
@@ -199,7 +200,8 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
-                    remark="matching with 2nd pattern but 2 date"
+                    date1=date1.isoformat()
+                    date2=date2.isoformat()
                     res=dateComp(date1,date2)
                 except ValueError:
                    pass
@@ -212,10 +214,10 @@ def dateExt(text):
             for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
                 try:
                     date1 = datetime.strptime(tup, frmt)
+                    date1=date1.isoformat()
                     lstdate.append(date1)
                 except ValueError:
                     pass
-        print(lstdate)
         for i in lstdate:
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
@@ -230,16 +232,15 @@ def dateExt(text):
         tup1='/'.join(tup1)
         for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
             try:
-                date_one_only = datetime.strptime(tup1, frmt)
-                remark="matching with 2nd pattern but 1 date"
-                patt2List= [date_one_only]
+                date_one = datetime.strptime(tup1, frmt)
+                date_one=date_one.isoformat()
+                patt2List= [date_one]
                 finalList.append(patt2List)
             except ValueError:
                pass
     if len(match2)==2:
         if len(res)>0:
             return res
-
     if len(match2)>2:
         if len(res)>0:
             return res
@@ -256,6 +257,8 @@ def dateExt(text):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 date2 = datetime.strptime(tup2, frmt)
+                date1=date1.isoformat()
+                date2=date2.isoformat()
                 res=dateComp(date1,date2)
             except ValueError:
                 pass
@@ -268,10 +271,10 @@ def dateExt(text):
             for frmt in ("%y/%m/%d","%Y/%m/%d","%Y/%B/%d","%Y/%b/%d","%y/%B/%d","%y/%b/%d"):
                 try:
                     date1 = datetime.strptime(tup, frmt)
+                    date1=date1.isoformat()
                     lstdate.append(date1)
                 except ValueError:
                     pass
-        print(lstdate)
         for i in lstdate:
             curyr=date.today().year
             if i.year==curyr or i.year==(curyr-1) or i.year==(curyr+1):
@@ -287,6 +290,7 @@ def dateExt(text):
         for frmt in ("%y/%m/%d","%Y/%m/%d","%Y/%B/%d","%Y/%b/%d","%y/%B/%d","%y/%b/%d"):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
+                date_one_only=date_one_only.isoformat()
                 patt3List= [date_one_only]
                 finalList.append(patt3List)
             except ValueError:
@@ -295,7 +299,6 @@ def dateExt(text):
     if len(match3)==2:
         if len(res)>0:
             return res
-
     if len(match3)>2:
         if len(res)>0:
             return res
@@ -325,9 +328,9 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
-                    remark="matching with 2dates and 4th pattern"
+                    date1=date1.isoformat()
+                    date2=date2.isoformat()
                     res=dateComp(date1,date2)
-                    #finalList.append(res)
                 except ValueError:
                     pass                
         else:
@@ -337,12 +340,11 @@ def dateExt(text):
                 try:
                     date1 = datetime.strptime(tup1, frmt)
                     date2 = datetime.strptime(tup2, frmt)
-                    remark="matching with 2nd pattern but 2 date"
+                    date1=date1.isoformat()
+                    date2=date2.isoformat()
                     res=dateComp(date1,date2)
-                    #finalList.append(res)
                 except ValueError:
                    pass
-
     elif len(match4)>2:
         lstdate=[]
         pattList_multiple=[]
@@ -352,6 +354,7 @@ def dateExt(text):
             for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
                 try:
                     date1 = datetime.strptime(tup, frmt)
+                    date1=date1.isoformat()
                     lstdate.append(date1)
                 except ValueError:
                     pass
@@ -370,6 +373,7 @@ def dateExt(text):
         for frmt in ("%b/%y","%B/%y","%b/%Y","%B/%Y"):
             try:
                 date_one_only = datetime.strptime(tup1, frmt)
+                date_one_only=date_one_only.isoformat()
                 patt4List=[date_one_only]
                 finalList.append(patt4List)
             except ValueError:
@@ -400,24 +404,17 @@ if tp1:
         json_data={"start_date":str(tp1[0]),"end_date":str(tp1[1])}
         print(json.dumps(json_data))
     elif len(tp1)==1:
-        print("tp1 len 1",tp1)
         json_data={"start_date":str(tp1[0])}
-        with open("dateJsonOutput2.json", "a+") as outfile: 
-            json.dump(json_data, outfile, indent=4)
-            outfile.write(',\n')
+        print(json.dumps(json_data))
 else:
     tp2=dateExt(jsonstr2)
     if tp2:
         if len(tp2)==2:
             json_data={"start_date":str(tp2[0]),"end_date":str(tp2[1])}
-            with open("dateJsonOutput2.json", "a+") as outfile: 
-                json.dump(json_data, outfile, indent=4)
-                outfile.write(',\n')
+            print(json.dumps(json_data))
         elif len(tp2)==1:
             json_data={"start_date":str(tp2[0])}
-            with open("dateJsonOutput2.json", "a+") as outfile: 
-                json.dump(json_data, outfile, indent=4)
-                outfile.write(',\n')
+            print(json.dumps(json_data))
     else:
         finalText_end=''
         jsonstr_end=jsonstr.replace("date :\n","date:")
@@ -431,42 +428,30 @@ else:
         if tp3:
             if len(tp3)==2:
                 json_data={"start_date":str(tp3[0]),"end_date":str(tp3[1])}
-                with open("dateJsonOutput2.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
+                print(json.dumps(json_data))
             elif len(tp3)==1:
                 json_data={"start_date":str(tp3[0])}
-                with open("dateJsonOutput2.json", "a+") as outfile: 
-                    json.dump(json_data, outfile, indent=4)
-                    outfile.write(',\n')
+                print(json.dumps(json_data))
         else:
             stripped = jsonstr.split("report updated till", 1)[0]
             tp4=dateExt(stripped)
             if tp4:
                 if len(tp4)==2:
                     json_data={"start_date":str(tp4[0]),"end_date":str(tp4[1])}
-                    with open("dateJsonOutput2.json", "a+") as outfile: 
-                        json.dump(json_data, outfile, indent=4)
-                        outfile.write(',\n')
+                    print(json.dumps(json_data))
                 elif len(tp4)==1:
                     json_data={"start_date":str(tp4[0])}
-                    with open("dateJsonOutput2.json", "a+") as outfile: 
-                        json.dump(json_data, outfile, indent=4)
-                        outfile.write(',\n') 
+                    print(json.dumps(json_data))
             else:
                 stripped2 = jsonstr.split("date :", 1)[0]
                 tp5=dateExt(stripped2)
                 if tp5:
                     if len(tp5)==2:
                         json_data={"start_date":str(tp5[0]),"end_date":str(tp5[1])}
-                        with open("dateJsonOutput2.json", "a+") as outfile: 
-                            json.dump(json_data, outfile, indent=4)
-                            outfile.write(',\n')
+                        print(json.dumps(json_data))
                     elif len(tp5)==1:
                         json_data={"start_date":str(tp5[0])}
-                        with open("dateJsonOutput2.json", "a+") as outfile: 
-                            json.dump(json_data, outfile, indent=4)
-                            outfile.write(',\n') 
+                        print(json.dumps(json_data))
                 else:
                     json_data={"start_date":"","end_date":""}
                     print(json.dumps(json_data))
